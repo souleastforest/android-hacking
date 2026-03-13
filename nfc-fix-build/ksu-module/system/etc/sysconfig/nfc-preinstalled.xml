@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    preinstalled-packages override for POCO F5 (marble) MIUI14 Global
+    Declares com.android.nfc (NQNfcNci) as a preinstalled system package
+    for all user types, so PackageManager recognizes it on boot scan.
+-->
+<config>
+    <install-in-user-type package="com.android.nfc">
+        <install-in user-type="SYSTEM" />
+        <install-in user-type="FULL" />
+    </install-in-user-type>
+</config>

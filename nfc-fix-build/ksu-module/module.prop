@@ -1,0 +1,6 @@
+id=nfc_fix_marble
+name=NFC Fix for marble (MIUI14 Global)
+version=v1.0
+versionCode=1
+author=souleastforest
+description=Fixes missing NFC entry and restores NFC feature declaration for POCO F5 marble MIUI14 Global (Qualcomm SM7375)

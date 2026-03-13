@@ -1,0 +1,11 @@
+# Compiled outputs (keep for reference but mark clearly)
+build/apk-tmp/
+build/stubs/
+build/classes/
+
+# Keystore (sensitive)
+debug.keystore
+
+# Large tool jars
+smali.jar
+xposed-module/XposedBridgeApi*.jar

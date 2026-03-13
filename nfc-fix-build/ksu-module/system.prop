@@ -1,0 +1,14 @@
+# NFC core fix for POCO F5 (marble) - MIUI14 Global
+# by souleastforest
+
+# Keep NFC enabled across reboots
+persist.nfc.enable=1
+ro.nfc.port=I2C
+
+# Critical: re-enable I2C bus for NFC HAL
+# System sets this to true by default on marble, blocking NFC HAL from chip
+ro.vendor.nfc.disable.i2c=false
+
+# Restore vendor NFC features
+ro.vendor.nfc.repair=1
+ro.vendor.nfc.wallet_fusion=1

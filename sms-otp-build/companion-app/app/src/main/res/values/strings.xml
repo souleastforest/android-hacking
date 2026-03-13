@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SMS OTP AutoFill</string>
+    <string name="accessibility_service_label">SMS OTP 自动填写</string>
+    <string name="accessibility_service_description">监听短信验证码并自动填入当前焦点输入框</string>
+    <string name="notification_channel_name">OTP 守护服务</string>
+    <string name="notification_title">SMS OTP AutoFill 运行中</string>
+    <string name="notification_text">正在监听短信验证码...</string>
+</resources>

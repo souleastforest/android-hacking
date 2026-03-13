@@ -1,0 +1,6 @@
+id=sms_otp_autofill
+name=SMS OTP AutoFill
+version=v0.1.0
+versionCode=1
+author=souleastforest
+description=Auto-detect SMS OTP and inject into focused input field via AccessibilityService. No LSPosed required.

@@ -1,0 +1,25 @@
+# Ignore macOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Build and generic outputs
+build/
+out/
+bin/
+gen/
+*.apk
+*.zip
+*.tar.gz
+
+# IDE and editors
+.idea/
+*.iml
+.vscode/
+*.swp
+*~
+
+# Project specific
+bug-resource/
+logs/
+platform-tools/

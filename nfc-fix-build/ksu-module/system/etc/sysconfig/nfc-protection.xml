@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    NFC protection sysconfig for POCO F5 (marble) MIUI14 Global
+    Prevents MIUI battery optimization and process cleaners from
+    killing com.android.nfc service.
+-->
+<config>
+    <!-- Allow NFC to run during Doze / power save -->
+    <allow-in-power-save package="com.android.nfc" />
+
+    <!-- Allow NFC to use network even in data save mode (needed for HCE) -->
+    <allow-in-data-usage-save package="com.android.nfc" />
+
+    <!-- Mark as system-user whitelisted (user 0 persistent) -->
+    <system-user-whitelisted-app package="com.android.nfc" />
+
+    <!-- Allow NFC broadcasts to be delivered even in background -->
+    <allow-implicit-broadcast action="android.nfc.action.ADAPTER_STATE_CHANGED" />
+    <allow-implicit-broadcast action="android.nfc.action.TRANSACTION_DETECTED" />
+</config>
