@@ -2,6 +2,9 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+_bmad
+.agents/
+.claude/
 
 # Build and generic outputs
 build/
