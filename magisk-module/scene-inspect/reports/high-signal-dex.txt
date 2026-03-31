@@ -1,0 +1,179 @@
+4:28878:am force-stop 
+5:28879:am force-stop com.xiaomi.joyose
+23:29214:l# This file will be read by resetprop
+31:30126:/available_governors
+34:30136:/cgroup
+35:30138:/cloud-scheduler-v2
+36:30139:/cloud-scheduler2
+39:30144:/cpufreq/scaling_governor
+41:30146:/cpuset
+43:30155:&/data/data/com.xiaomi.joyose/databases
+44:30170:/data/vendor/thermal/config
+45:30171:/data/vendor/thermal/config/
+46:30172: /data/vendor/thermal/decrypt.txt
+47:30179:/dev/cpuset/background/cpus
+48:30180:/dev/cpuset/foreground/cpus
+49:30181:/dev/cpuset/restricted/cpus
+50:30182:"/dev/cpuset/system-background/cpus
+51:30183: /dev/cpuset/top-app/cgroup.procs
+52:30184:/dev/cpuset/top-app/cpus
+53:30194:/governor
+54:30195:/governor;
+135:30340:@/sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors
+138:30343:5/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+149:30354:'/sys/fs/cgroup/memory/memory.swappiness
+150:30355:2/sys/fs/cgroup/memory/scene_swap/memory.swappiness
+175:30461:5> /sys/module/msm_performance/parameters/cpu_max_freq
+177:30545:@cpuset
+183:31378:CGroup Init Fail!
+186:32524:Governor Params
+187:32782:JoyoseConfig().decryptCfg()
+188:32783:JoyoseConfig.PATH
+202:35592:>Lcom/omarea/library/shell/ThreadsSchedStat$getRealtimeState$1;
+203:35593:+Lcom/omarea/library/shell/ThreadsSchedStat;
+213:36384:4Lcom/omarea/vtools/activities/ActivityMiuiThermal$a;
+214:36385:4Lcom/omarea/vtools/activities/ActivityMiuiThermal$b;
+215:36386:4Lcom/omarea/vtools/activities/ActivityMiuiThermal$c;
+216:36387:4Lcom/omarea/vtools/activities/ActivityMiuiThermal$d;
+217:36388:2Lcom/omarea/vtools/activities/ActivityMiuiThermal;
+218:36701:NLcom/omarea/vtools/dialogs/DialogSchedulerFeatures$show$$inlined$run$lambda$1;
+219:36702:NLcom/omarea/vtools/dialogs/DialogSchedulerFeatures$show$$inlined$run$lambda$2;
+220:36703:3Lcom/omarea/vtools/dialogs/DialogSchedulerFeatures;
+222:38141:FLkotlinx/coroutines/android/HandlerContext$scheduleResumeAfterDelay$1;
+223:38878:>Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;
+224:38879:2Lkotlinx/coroutines/scheduling/CoroutineScheduler;
+225:38880:!Lkotlinx/coroutines/scheduling/a;
+226:38881:!Lkotlinx/coroutines/scheduling/b;
+227:38882:!Lkotlinx/coroutines/scheduling/c;
+228:38883:!Lkotlinx/coroutines/scheduling/d;
+229:38884:!Lkotlinx/coroutines/scheduling/e;
+230:38885:!Lkotlinx/coroutines/scheduling/f;
+231:38886:!Lkotlinx/coroutines/scheduling/g;
+232:38887:!Lkotlinx/coroutines/scheduling/h;
+233:38888:!Lkotlinx/coroutines/scheduling/i;
+234:38889:!Lkotlinx/coroutines/scheduling/j;
+235:38890:!Lkotlinx/coroutines/scheduling/k;
+236:38891:!Lkotlinx/coroutines/scheduling/l;
+237:38892:!Lkotlinx/coroutines/scheduling/m;
+238:38893:!Lkotlinx/coroutines/scheduling/n;
+240:39499:ProcessCGroup
+241:39503:ProcessCpuSet
+242:39757:-Scene.context.getString(R.string.schedule_ep)
+243:39758:.Scene.context.getString(R.string.schedule_fas)
+244:39759:-Scene.context.getString(R.string.schedule_hp)
+245:39802:Sched
+246:39803:SchedTune
+247:40072:GSystem property 'kotlinx.coroutines.scheduler' has unrecognized value '
+248:40580:ThreadsSchedStat.kt
+256:41557:?[Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;
+258:41938:access$governorRun
+260:42179:adrenoGovernor
+262:42225:Calter table scene_config3 add column bg_cgroup_mem text default('')
+264:42227:Calter table scene_config3 add column fg_cgroup_mem text default('')
+265:42235:am force-stop 
+273:42471:app_details_cgroup_mem
+274:42472:app_details_cgroup_mem2
+275:42768:bgCGroupMem
+276:42770:bg_cgroup_mem
+298:42959:cGroup
+299:43032:cgroup_apps
+300:43033:cgroup_default
+301:43034:cgroup_limit
+302:43035:cgroup_memory
+303:43036:cgroup_system
+309:43187:>chmod 0664 /sys/module/msm_performance/parameters/cpu_max_freq
+313:43256:cluster.governor_params
+316:43261:cluster_governor
+317:43262:cluster_governor_params
+328:43444:)com.omarea.library.shell.ThreadsSchedStat
+333:43715:com.xiaomi.joyose
+334:43873:'context.getString(R.string.boot_cpuset)
+336:43927:1context.getString(R.string.schedule_bypass_power)
+337:43928:1context.getString(R.string.schedule_feature_cpus)
+338:43929:0context.getString(R.string.schedule_feature_fps)
+339:43930:,context.getString(R.string.schedule_limiter)
+340:43992:schedule_feature_details)
+344:44104:cpuSet
+345:44106:cpuStatus.cpusetBg
+346:44107:cpuStatus.cpusetFg
+347:44108:cpuStatus.cpusetSysBg
+348:44109:cpuStatus.cpusetTop
+351:44112:cpuUtil.availableGovernors
+353:44117:'cpuUtils.getGovernorParamsByCore(index)
+356:44138:cpu_sched
+358:44153:cpusetBg
+359:44154:cpusetFg
+360:44155:cpusetRestricted
+361:44156:cpusetSysBg
+362:44157:cpusetTop
+363:44158:cpuset_bg
+364:44159:cpuset_enable
+365:44160:cpuset_foreground
+366:44161:cpuset_system_bg
+367:44162:cpuset_top_app
+370:44174:create table scene_config3(id text primary key, alone_light int default(0), light int default(-1), dis_notice int default(0),dis_button int default(0),gps_on int default(0),freeze int default(0),screen_orientation int default(-1),fg_cgroup_mem text default(''),bg_cgroup_mem text default(''),dynamic_boost_mem int default(0),show_monitor int default(0))
+372:44221: currentSceneConfig!!.fgCGroupMem
+385:44978:features/cpuset.conf
+386:44986:fgCGroupMem
+387:44988:fg_cgroup_mem
+389:45060:*findViewById<TextView>(R.id.ProcessCGroup)
+390:45064:*findViewById<TextView>(R.id.ProcessCpuSet)
+400:46305:,getString(R.string.perf_choose_cpu_governor)
+401:46308:,getString(R.string.perf_choose_gpu_governor)
+402:46318:.getString(R.string.schedule_cloud_get_failure)
+403:46319:(getString(R.string.schedule_dynamic_off)
+404:46320:+getString(R.string.schedule_fas_rs_summary)
+405:46321:+getString(R.string.schedule_remove_outside)
+406:46322:.getString(R.string.schedule_restore_automatic)
+407:46323:'getString(R.string.schedule_unfinished)
+408:46324:(getString(R.string.schedule_unsupported)
+409:46325:-getString(R.string.schedule_uperf_gt_summary)
+410:46326:*getString(R.string.schedule_uperf_summary)
+411:46603:governor
+412:46604:governor-params
+413:46605:governorRun
+414:46606:governorTimer
+415:46607:governor_params
+416:46608:governors
+421:46615:gpuUtils.governors
+424:46618:gpu_governor
+433:46901:init.svc.mi_thermald
+435:46921:insert into scene_config3(id, alone_light, light, dis_notice, dis_button, gps_on, freeze, screen_orientation, fg_cgroup_mem, bg_cgroup_mem, dynamic_boost_mem, show_monitor) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+436:47278:)killall -9 %s;am force-stop %s;am kill %s
+437:47487:kotlinx.coroutines.scheduler
+438:47488:1kotlinx.coroutines.scheduler.blocking.parallelism
+439:47489:+kotlinx.coroutines.scheduler.core.pool.size
+440:47490:+kotlinx.coroutines.scheduler.keep.alive.sec
+441:47491:*kotlinx.coroutines.scheduler.max.pool.size
+442:47492:*kotlinx.coroutines.scheduler.resolution.ns
+443:47493:7kotlinx.coroutines.scheduling.CoroutineScheduler$Worker
+444:47682:lastScheduledTask
+460:49356:ipm clear com.xiaomi.joyose && am start-service com.xiaomi.joyose/com.xiaomi.joyose.smartop.SmartOpService
+493:49725:.res.getStringArray(R.array.cgroup_mem_options)
+494:49726:-res.getStringArray(R.array.cgroup_mem_values)
+495:49731:resetprop 
+496:49732:&resetprop dalvik.vm.dex2oat-swap false
+498:49856:scene-scheduler
+499:49866:sceneConfigInfo.bgCGroupMem
+500:49881:schedule
+501:49882:scheduleAtFixedRate
+502:49883:scheduleDrawable
+503:49884:scheduleSelf
+504:49885:scheduler-func
+505:49886:scheduler-refresh
+506:49887:scheduler-status
+511:50057: service call SurfaceFlinger 1013
+513:50760:setPropUrl
+514:50761:setPropertyName
+515:51082:setprop 
+516:51083:setprop "
+527:51309:startGovernorTimer
+530:51355:status.cpusetBg
+531:51356:status.cpusetFg
+532:51357:status.cpusetSysBg
+533:51358:status.cpusetTop
+534:51359:status.governor
+539:51375:stopGovernorTimer
+558:51941:unscheduleDrawable
+559:51942:unscheduleSelf
+560:51949:update scene_config3 set alone_light = 0, fg_cgroup_mem = '', screen_orientation = ?, bg_cgroup_mem = '', dynamic_boost_mem = 0, show_monitor = 0

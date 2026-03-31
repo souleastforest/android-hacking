@@ -1,0 +1,52 @@
+[
+  {
+    "title": "@string:limiter_scope",
+    "items": [
+      {
+        "title": "@string:limiter_apps",
+        "desc": "@string:limiter_apps_desc",
+        "visible": "always",
+        "field": {
+          "default": "1",
+          "path": "limiters_in_apps",
+          "type": "boolean"
+        }
+      },
+      {
+        "title": "@string:limiter_games",
+        "desc": "@string:limiter_games_desc",
+        "visible": "always",
+        "field": {
+          "default": "1",
+          "path": "limiters_in_games",
+          "type": "boolean"
+        }
+      }
+    ]
+  },
+  {
+    "title": "@string:limiter_preference",
+    "items": [
+      {
+        "title": "jiffies统计",
+        "desc": "从/proc/stat读取jiffies为单位的负载统计，该数据通常精确到4ms",
+        "visible": "always",
+        "field": {
+          "path": "use-stat",
+          "type": "boolean",
+          "default": "0"
+        }
+      },
+      {
+        "title": "状态提示",
+        "desc": "辅助调速器启动时弹出提示",
+        "visible": "always",
+        "field": {
+          "path": "status-notify",
+          "type": "boolean",
+          "default": "0"
+        }
+      }
+    ]
+  }
+]

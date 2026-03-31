@@ -1,0 +1,6 @@
+id=esim_bypass_marble
+name=eSIM Hardware Bypass for marble (giffgaff + 9esim)
+version=v1.0
+versionCode=1
+author=souleastforest
+description=Injects android.hardware.telephony.euicc feature flag and spoofs telephony props so giffgaff app reveals eSIM activation UI on POCO F5 marble (KernelSU)

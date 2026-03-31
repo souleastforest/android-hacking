@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<group>
+    <resource dir="file:///android_asset/kr-script/other" />
+
+    <action id="addin_restart_systemui" shell="hidden">
+        <title>重启SystemUI</title>
+        <desc>结束SystemUI进程，使其重新加载</desc>
+        <set>
+            am kill com.android.systemui 2> /dev/null
+            killall -9 com.android.systemui 2> /dev/null
+        </set>
+    </action>
+
+    <group>
+        <action>
+            <title>UFS存储寿命</title>
+            <summary sh="run ufs/ufs_summary.sh" />
+            <set>run ufs/ufs_detail.sh</set>
+            <desc>*数据仅供参考</desc>
+        </action>
+        <action visible="item_exist.sh /sys/block/mmcblk0/device/life_time">
+            <title>EMMC存储寿命</title>
+            <summary sh="run emmc/emmc_summary.sh" />
+            <set>run emmc/emmc_detail.sh</set>
+            <desc>*数据仅供参考</desc>
+        </action>
+    </group>
+
+    <group>
+        <action>
+            <title>[Magisk]系统自救</title>
+            <desc>安装一个自动救砖模块，以应对操作不慎导致的系统故障</desc>
+            <!--<params>
+                <param value="2" name="splash_fix" title="第一屏自救" label="异常次数">
+                    <option value="2">2次</option>
+                    <option value="3">3次</option>
+                    <option value="3">5次</option>
+                    <option value="">不使用</option>
+                </param>
+                <param value="" multiple="multiple" name="splash_methods" title="第一屏自救方式">
+                    <option value="modules">禁用所有MAGISK模块</option>
+                </param>
+                <param value="2" name="anim_fix" title="第二屏自救" label="异常次数">
+                    <option value="2">2次</option>
+                    <option value="3">3次</option>
+                    <option value="3">5次</option>
+                    <option value="">不使用</option>
+                </param>
+                <param value="" multiple="multiple" name="anim_methods" title="第二屏自救方式">
+                    <option value="modules">禁用所有MAGISK模块</option>
+                    <option value="display">还原DPI、分辨率</option>
+                    <option value="apps">还原冻结、隐藏的应用</option>
+                </param>=
+                <param value="3" name="timeout_fix" title="启动超时" label="异常次数" desc="">
+                    <option value="3">2分钟</option>
+                    <option value="3">3分钟</option>
+                    <option value="5">5分钟</option>
+                    <option value="10">10分钟</option>
+                    <option value="">无限制</option>
+                </param>
+                <param value="" multiple="multiple" name="timeout_methods" title="启动超时自救方式">
+                    <option value="modules">禁用所有MAGISK模块</option>
+                    <option value="display">还原DPI、分辨率</option>
+                    <option value="apps">还原冻结、隐藏的应用</option>
+                </param>
+                <param value="3" name="update_protect" title="系统更新保护" desc="">
+                    <option value="enable">启用</option>
+                    <option value="">需要</option>
+                </param>
+                <param value="" multiple="multiple" name="update_methods" title="系统更新保护方式">
+                    <option value="modules">禁用所有MAGISK模块</option>
+                    <option value="display">还原DPI、分辨率</option>
+                    <option value="apps">还原冻结、隐藏的应用</option>
+                </param>
+            </params>-->
+            <set>run resurgence/set.sh</set>
+        </action>
+        <action>
+            <title>[Magisk]温控移除</title>
+            <desc>创建Magisk模块，以空文件占位达到移除温控的效果</desc>
+            <param name="selected" multiple="multiple" value-sh="run thermal/value.sh" options-sh="run thermal/options.sh" />
+            <set>run thermal/set.sh</set>
+        </action>
+    </group>
+
+    <group>
+        <action confirm="false">
+            <title>温度传感器</title>
+            <desc>查看温度传感器当前数值</desc>
+            <set>run sensor_values.sh</set>
+        </action>
+        <picker
+            visible="run 377_key/support.sh"
+            options-sh="run 377_key/options.sh"
+            shell="hidden">
+            <title>Google键事件</title>
+            <summary sh="run 377_key/summary.sh" />
+            <get>run 377_key/get.sh</get>
+            <set>run 377_key/set.sh</set>
+        </picker>
+    </group>
+
+    <group title="dex2oat编译">
+        <action min-sdk="24">
+            <title>修改dex2oat线程数</title>
+            <desc>增加核心线程数（不超过CPU核心数量）可以提高应用安装效率，但会造成应用安装过程中卡顿！</desc>
+            <set>run dex2oat/threads_set.sh</set>
+            <params>
+                <param name="boot" title="启动时(boot-dex2oat-threads)"
+                    options-sh="run thread_count_options.sh"
+                    value-sh="getprop dalvik.vm.boot-dex2oat-threads" />
+                <param name="dex2oat" title="启动后(dex2oat-threads)"
+                    options-sh="run thread_count_options.sh"
+                    value-sh="getprop dalvik.vm.dex2oat-threads" />
+                <param name="image" title="编译启动映像(image-dex2oat-threads)"
+                    options-sh="run thread_count_options.sh"
+                    value-sh="getprop dalvik.vm.image-dex2oat-threads" />
+                <param name="other" title="dex2oat_thread_count" readonly="readonly">
+                    <option value="">默认</option>
+                </param>
+            </params>
+        </action>
+
+        <action visible=". ./kr-script/common/android_n.sh">
+            <title>执行dex2oat编译</title>
+            <desc>适用于Android N+，对指定应用进行dex2oat编译</desc>
+            <param name="app" value="1" title="要编译的应用" desc="如果是首次执行，可能需要几十分钟，已经处理过的应用不会重复处理。系统更新后此操作失效，且应用更新后也需要处理~~">
+                <option value=" ">全部</option>
+                <option value="-s">仅系统应用</option>
+                <option value="-3">仅第三方应用</option>
+            </param>
+            <param name="mode" value="speed" title="编译模式" desc="如果你不了解Speed和Everything模式的区别，那么保持此选项默认状态就好了">
+                <option value="speed">Speed模式（推荐）</option>
+                <option value="everything">Everything模式</option>
+            </param>
+            <set>run dex2oat/compile.sh</set>
+        </action>
+    </group>
+
+    <group title="磁盘IO">
+        <action>
+            <title>执行FSTRIM</title>
+            <desc>一般系统会定时执行</desc>
+            <set>
+                echo 'fstrim /data'; fstrim /data;
+                echo 'fstrim /cache'; fstrim /cache;
+                echo 'fstrim /system'; fstrim /system 2>/dev/null;
+                sm fstrim 2>/dev/null
+                echo '命令已执行';
+            </set>
+        </action>
+    </group>
+
+    <group title="其它">
+        <action confirm="true">
+            <title>清空dalvik-cache</title>
+            <desc>清空dalvik缓存，会立刻重启手机，并在下次启动时耗费大量时间重建缓存！此操作并不会提升性能，如果你不知道是什么，请不要乱点！</desc>
+            <set>run drop-dalvik-cache.sh</set>
+        </action>
+        <switch min-sdk="29">
+            <title>USAP pool</title>
+            <get>
+                if [[ $(getprop persist.device_config.runtime_native.usap_pool_enabled) == 'true' || $(getprop persist.sys.usap_pool_enabled) == 'true' ]]; then
+                echo 1
+                else
+                echo 0
+                fi
+            </get>
+            <set>
+                prop=persist.device_config.runtime_native.usap_pool_enabled
+                prop2=persist.sys.usap_pool_enabled
+                if [[ $state == '1' ]]; then
+                setprop $prop true
+                setprop $prop2 true
+                else
+                setprop $prop false
+                setprop $prop2 false
+                fi
+                echo '好了, 请重启手机'
+                echo 'OK, Please restart your phone.'
+            </set>
+        </switch>
+    </group>
+</group>

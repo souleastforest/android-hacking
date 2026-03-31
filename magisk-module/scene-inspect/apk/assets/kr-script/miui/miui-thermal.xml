@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<items>
+    <resource dir="file:///android_asset/kr-script/miui" />
+    <group id="thermal">
+        <picker id="mi-thermal-local" reload="thermal"
+            title="温控配置切换- 本地生成"
+            desc="替换到/data/vendor/thermal，无需重启手机立即生效。配置根据系统温控文件，由程序自动处理生成，请确保你的系统自带温控是官方原版！"
+            options-sh="(wget 'http://127.0.0.1:8765/miui-thermal' -q -O miui-thermal.ini &amp;&amp; cat miui-thermal.ini &amp;&amp; rm miui-thermal.ini) || curl 'http://127.0.0.1:8765/miui-thermal'">
+            <summary sh="run thermal_conf3/summary.sh" />
+            <get>run thermal_conf3/current.sh</get>
+            <set>run thermal_conf3/config.sh local</set>
+        </picker>
+    </group>
+    <group>
+        <page title="特定场景优化配置"
+            activity="com.omarea.vtools/.activities.ActivityMiuiCloudProfile">
+        </page>
+    </group>
+</items>

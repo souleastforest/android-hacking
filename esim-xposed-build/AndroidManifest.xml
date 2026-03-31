@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.souleastforest.esimbypass.fix1"
+    android:versionCode="2"
+    android:versionName="1.1-fix1">
+
+    <uses-sdk
+        android:minSdkVersion="28"
+        android:targetSdkVersion="29" />
+
+    <application
+        android:label="eSIM Bypass (giffgaff) fix1"
+        android:allowBackup="false">
+        
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="Bypasses eSIM hardware checks (hasSystemFeature) for the giffgaff app to reveal the eSIM activation UI." />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="93" />
+
+    </application>
+</manifest>

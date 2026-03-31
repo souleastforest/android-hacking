@@ -1,0 +1,6 @@
+# This file will be read by resetprop
+# Example: Change dpi
+# ro.sf.lcd_density=320
+Build.BRAND=
+persist.sys.thermal.config=10
+ro.vendor.fps.switch.thermal=false

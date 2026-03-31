@@ -1,0 +1,7 @@
+id=miui14cloud
+name=miui14去云控与温控
+version=v1.3.9
+versionCode=1
+author=shadow3
+description=去云控与温控，跳电请反馈给作者
+updateJson=https://gitee.com/shadow213/miui14cloud/raw/master/miui14cloud_update.json

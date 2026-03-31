@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <!-- eSIM / eUICC hardware feature flag                          -->
+    <!-- Injected by esim_bypass_marble KernelSU module             -->
+    <!-- Tricks PackageManager.hasSystemFeature() into returning true -->
+    <feature name="android.hardware.telephony.euicc" />
+</permissions>

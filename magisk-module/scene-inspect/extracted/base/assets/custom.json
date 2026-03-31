@@ -1,0 +1,10 @@
+{
+  "version": "8.0 Customized",
+  "versionCode": 8000,
+  "author": "SCENE8",
+  "projectUrl": "http://vtools.omarea.com/",
+  "features": {
+    "strict": true,
+    "pedestal": false
+  }
+}

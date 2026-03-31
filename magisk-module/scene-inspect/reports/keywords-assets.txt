@@ -1,0 +1,845 @@
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/swap_control.sh:68:  setprop $loop_save ""
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/swap_control.sh:89:    setprop $loop_save $next_loop_path
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/swap_control.sh:99:          if [[ -f /sys/block/zram0/backing_dev ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/swap_control.sh:100:            backing_dev=$(cat /sys/block/zram0/backing_dev)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/swap_control.sh:104:          if [[ -f /sys/block/zram0/backing_dev ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/swap_control.sh:105:            echo $backing_dev > /sys/block/zram0/backing_dev
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/swap_control.sh:125:  echo 100 > /proc/sys/vm/overcommit_ratio
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/swap_control.sh:126:  if [[ -f /proc/sys/vm/swap_ratio ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/swap_control.sh:127:    echo 100 > /proc/sys/vm/swap_ratio
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/swap_control.sh:129:  if [[ -f /proc/sys/panic_on_oom ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/swap_control.sh:130:   echo 0 > /proc/sys/panic_on_oom
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:18:    write "/sys/class/zram-control/hot_remove" ${dev_index}
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:20:    write "/sys/block/$zram/reset" 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:21:    write "/sys/block/$zram/disksize" 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:30:  setprop vnswap.enabled true
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:31:  setprop ro.config.zram true
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:32:  setprop ro.config.zram.support true
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:33:  setprop zram.disksize ${disksz}
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:34:  write /proc/sys/vm/swappiness 100
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:35:  write /proc/sys/vm/swap_ratio_enable 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:36:  write /proc/sys/vm/swap_ratio 70
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:50:  if [ -e "/sys/class/zram-control/hot_add" ]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:51:    RAM_DEV=$(cat /sys/class/zram-control/hot_add)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:62:  write /sys/block/${zram}/comp_algorithm ${algorithm} # 压缩算法
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:63:  # write /sys/block/${zram}/max_comp_streams 8
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:64:  write /sys/block/${zram}/reset 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:65:  write /sys/block/${zram}/disksize ${disksz_mb}M
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:76:  setprop vnswap.enabled false
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:77:  setprop ro.config.zram false
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:78:  setprop ro.config.zram.support false
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:79:  setprop zram.disksize 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/zram_control.sh:80:  write /proc/sys/vm/swappiness 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/AirplaneMode(OFF).sh:1:settings put global airplane_mode_on 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/AirplaneMode(OFF).sh:2:am broadcast -a android.intent.action.AIRPLANE_MODE --ez state false
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:14:  echo 3 > /proc/sys/vm/drop_caches
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:21:if [[ -e /sys/fs/cgroup/memory/memory.swappiness ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:22:  scene_memcg="/sys/fs/cgroup/memory"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:27:if [[ -f '/proc/sys/vm/extra_free_kbytes' ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:28:  modify_path='/proc/sys/vm/extra_free_kbytes'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:32:elif [[ -f '/proc/sys/vm/min_free_kbytes' ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:33:  modify_path='/proc/sys/vm/min_free_kbytes'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:77:  if [[ ! -f /sys/block/zram0/backing_dev ]] || [[ $(cat /proc/swaps | grep zram0) == '' ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:80:  backing_dev=$(cat /sys/block/zram0/backing_dev)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:81:  echo 0 > /sys/block/zram0/writeback_limit_enable
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:83:    # echo [all | ?seconds] > /sys/block/zram0/idle
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:84:    # echo all > /sys/block/zram0/idle
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:85:    # echo [idle | huge_idle | incompressible] > /sys/block/zram0/writeback
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:86:    # echo idle > /sys/block/zram0/writeback
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:89:      echo $d > /sys/block/zram0/idle
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:91:        echo $t > /sys/block/zram0/writeback
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:129:        # Only set for user apps and not in cgroup
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:130:        if [[ $(grep memory /proc/$pid/cgroup | awk -F '/' '{print $2}') == '' ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:133:            echo $pid > $scene_memcg/apps/cgroup.procs
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:135:            echo $pid > $scene_memcg/system/cgroup.procs
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:147:  cmd=""
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:156:      cmd="$cmd\necho $limit > $scene_memcg/$set/memory.limit_in_bytes"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:169:      cmd="$cmd\necho ${limit_kb}K > $scene_memcg/$set/memory.limit_in_bytes"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:184:      cmd="$cmd\necho ${limit_kb}K > $scene_memcg/$set/memory.limit_in_bytes"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:188:  echo "$cmd" > /cache/force_empty.sh
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:225:    setprop vtools.state.force_compact 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:283:    setprop vtools.state.force_compact 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:308:if [[ -f /proc/sys/vm/compact_memory ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/addin/force_compact.sh:309:  echo 1 > /proc/sys/vm/compact_memory
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/AccessibilityService(Disable).sh:4:  settings put secure accessibility_enabled 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/AccessibilityService(Disable).sh:21:    settings put secure enabled_accessibility_services "$new_str"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/AccessibilityService(Disable).sh:25:  settings put secure accessibility_enabled 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/AccessibilityService(Enable).sh:4:  settings put secure accessibility_enabled 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/AccessibilityService(Enable).sh:9:    settings put secure enabled_accessibility_services "$scene"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/AccessibilityService(Enable).sh:11:    settings put secure enabled_accessibility_services "$services:$scene"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/AccessibilityService(Enable).sh:13:  settings put secure accessibility_enabled 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/Dex2oat(Everything).sh:1:am startservice -n com.omarea.vtools/.services.CompileService -a com.omarea.vtools.EverythingCompile
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/AirplaneMode(ON).sh:1:settings put global airplane_mode_on 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/AirplaneMode(ON).sh:2:am broadcast -a android.intent.action.AIRPLANE_MODE --ez state true
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/threads/44.json:35:        "0-3": ["Audio", "tp_schedule"]
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:9:            am kill com.android.systemui 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:15:        <action shell="hidden" exist="/sys/class/backlight/panel0-backlight/brightness" id="brightness">
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:20:                    max-sh="cat /sys/class/backlight/panel0-backlight/max_brightness" min="1"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:21:                    value-sh="cat /sys/class/backlight/panel0-backlight/brightness" />
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:25:                path=/sys/class/backlight/panel0-backlight/brightness
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:33:        <action shell="hidden" exist="/sys/devices/platform/panel_drv_0/backlight/panel/brightness" id="brightness">
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:38:                    max-sh="cat /sys/devices/platform/panel_drv_0/backlight/panel/max_brightness" min="1"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:39:                    value-sh="cat /sys/devices/platform/panel_drv_0/backlight/panel/brightness" />
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:43:                path=/sys/devices/platform/panel_drv_0/backlight/panel/brightness
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:51:        <action shell="hidden" exist="/sys/devices/platform/soc/soc:mtk_leds/leds/lcd-backlight/max_brightness" id="brightness">
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:56:                    max-sh="cat /sys/devices/platform/soc/soc:mtk_leds/leds/lcd-backlight/max_brightness" min="1"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:57:                    value-sh="cat /sys/devices/platform/soc/soc:mtk_leds/leds/lcd-backlight/brightness" />
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:61:                path=/sys/devices/platform/soc/soc:mtk_leds/leds/lcd-backlight/brightness
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:92:              service call SurfaceFlinger 1022 f $v
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:93:              setprop persist.sys.sf.color_saturation $v
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:100:                  service call SurfaceFlinger 1035 i32 $state
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:112:                service call SurfaceFlinger 1034 i32 $state
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:122:            <set>settings put secure high_text_contrast_enabled $state</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:134:                settings put secure accessibility_display_daltonizer 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:136:                settings put secure accessibility_display_daltonizer_enabled $state
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/display.xml:148:            <set>settings put secure accessibility_display_daltonizer $state</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/GPS(OFF).sh:4:    settings put secure location_mode 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/GPS(OFF).sh:6:    settings put secure location_providers_allowed -gps
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/GPS(OFF).sh:8:    settings put secure location_providers_allowed network
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/Dex2oat(Speed-profile).sh:1:am startservice -n com.omarea.vtools/.services.CompileService -a com.omarea.vtools.SpeedProfileCompile
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/launcher/options.sh:3:# pm query-activities --brief -a android.intent.action.MAIN -c android.intent.category.HOME
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/launcher/options.sh:5:# launchers=$(pm query-activities --brief -a android.intent.action.MAIN -c android.intent.category.HOME | grep '/' | sed 's/\ //g')
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/launcher/options.sh:8:launchers=$(pm query-activities --brief -a android.intent.action.MAIN -c android.intent.category.HOME | grep '/')
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/animation/set.sh:2:    settings put global window_animation_scale 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/animation/set.sh:5:    settings put global transition_animation_scale 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/animation/set.sh:8:    settings put global animator_duration_scale 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/animation/set.sh:11:    settings put global transition_animation_duration_ratio 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/animation/set.sh:14:settings put global window_animation_scale $w
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/animation/set.sh:15:settings put global transition_animation_scale $transition
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/animation/set.sh:16:settings put global animator_duration_scale $animator
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/animation/set.sh:17:settings put global transition_animation_duration_ratio $duration_ratio
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/Dex2oat(Speed).sh:1:am startservice -n com.omarea.vtools/.services.CompileService -a com.omarea.vtools.SpeedCompile
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/install-location-summary.sh:1:loc=`pm get-install-location | cut -f1 -d '['`
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/force_resize_set.sh:1:settings put global force_resizable_activities $state
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/launcher/get.sh:1:pm  resolve-activity --brief -c android.intent.category.HOME -a android.intent.action.MAIN | grep '/'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/launcher/set.sh:3:# pm query-activities -a android.intent.action.MAIN -c android.intent.category.HOME | grep name=
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/launcher/set.sh:4:# pm query-activities --brief -a android.intent.action.MAIN -c android.intent.category.HOME
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/launcher/set.sh:5:# pm set-home-activity com.google.android.apps.nexuslauncher/.NexusLauncherActivity  --user 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/launcher/set.sh:8:launchers=$(pm query-activities --brief -a android.intent.action.MAIN -c android.intent.category.HOME | grep '/')
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/launcher/set.sh:11:    am force-stop $packageName 2>/dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/launcher/set.sh:25:    am force-stop "$app" 2>/dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/launcher/set.sh:35:    pm set-home-activity $activity --user ${ANDROID_UID}
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/threads/2321.json:75:      "cgroup": {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/GPS(ON).sh:4:    settings put secure location_mode 3
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/GPS(ON).sh:6:    settings put secure location_providers_allowed +gps
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/custom-command/GPS(ON).sh:8:    settings put secure location_providers_allowed gps,network
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/qq_style_fix.sh:42:am force-stop com.tencent.mobileqq 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/qq_style_fix.sh:43:am kill-all com.tencent.mobileqq 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/qq_style_fix.sh:44:am kill com.tencent.mobileqq 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/qq_style_fix.sh:51:pm uninstall com.tencent.mobileqq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/common/mtk_v2.sh:2:if [[ "$platform" != "" ]] && [[ ! -d /proc/ppm ]] && [[ -d /proc/gpufreqv2 ]]
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/mat4.sh:4:cmd_base="service call SurfaceFlinger 1015 i32 1  "
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/mat4.sh:11:  cmd="$cmd_base"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/mat4.sh:13:    cmd="$cmd f $i"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/mat4.sh:15:  $cmd
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/mat4.sh:25:  cmd="$cmd_base"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/mat4.sh:27:    cmd="$cmd f $i"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/mat4.sh:29:  $cmd
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/mat4.sh:39:  cmd="$cmd_base"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/mat4.sh:41:    cmd="$cmd f $i"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/mat4.sh:43:  $cmd
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/mat4.sh:53:  cmd="$cmd_base"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/mat4.sh:55:    cmd="$cmd f $i"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/mat4.sh:57:  $cmd
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/mat4.sh:67:  cmd="$cmd_base"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/mat4.sh:69:    cmd="$cmd f $i"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/display/mat4.sh:71:  $cmd
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/gapps_set.sh:15:pm $pm_cmd com.google.android.gsf 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/gapps_set.sh:16:pm $pm_cmd com.google.android.gsf.login 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/gapps_set.sh:17:pm $pm_cmd com.google.android.gms 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/gapps_set.sh:18:pm $pm_cmd com.android.vending 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/gapps_set.sh:19:pm $pm_cmd com.google.android.play.games 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/gapps_set.sh:20:pm $pm_cmd com.google.android.syncadapters.contacts 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/qq_style_set.sh:49:am force-stop com.tencent.mobileqq 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/qq_style_set.sh:50:am kill-all com.tencent.mobileqq 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/qq_style_set.sh:51:am kill com.tencent.mobileqq 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/installer_scan/support.sh:3:# pm list packages -u com.oplus.appdetail
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/installer_scan/support.sh:4:installed=`pm list packages -a com.oplus.appdetail`
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/gapps_get.sh:3:disabled=`pm list packages -d | grep com.google.android.gsf`
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/ufs/ufs_detail.sh:1:if [[ -f /sys/devices/platform/soc/1d84000.ufshc/health_descriptor/life_time_estimation_a ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/ufs/ufs_detail.sh:2:  bDeviceLifeTimeEstA=$(cat /sys/devices/platform/soc/1d84000.ufshc/health_descriptor/life_time_estimation_a)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/ufs/ufs_detail.sh:3:  # bDeviceLifeTimeEstB=$(cat /sys/devices/platform/soc/1d84000.ufshc/health_descriptor/life_time_estimation_b)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/ufs/ufs_detail.sh:4:elif [[ -f /sys/devices/virtual/mi_memory/mi_memory_device/ufshcd0/dump_health_desc ]];then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/ufs/ufs_detail.sh:5:  bDeviceLifeTimeEstA=$(cat /sys/devices/virtual/mi_memory/mi_memory_device/ufshcd0/dump_health_desc | grep bDeviceLifeTimeEstA | cut -f2 -d '=' | cut -f2 -d ' ')
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/ufs/ufs_detail.sh:6:  # bDeviceLifeTimeEstB=$(cat /sys/devices/virtual/mi_memory/mi_memory_device/ufshcd0/dump_health_desc | grep bDeviceLifeTimeEstB | cut -f2 -d '=' | cut -f2 -d ' ')
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/ufs/ufs_detail.sh:8:  bDeviceLifeTimeEstA=$(cat /sys/kernel/debug/*.ufshc/dump_health_desc 2>/dev/null | grep bDeviceLifeTimeEstA | cut -f2 -d '=' | cut -f2 -d ' ')
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/ufs/ufs_detail.sh:9:  # bDeviceLifeTimeEstB=$(cat /sys/kernel/debug/*.ufshc/dump_health_desc 2>/dev/null | grep bDeviceLifeTimeEstB | cut -f2 -d '=' | cut -f2 -d ' ')
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/ufs/ufs_detail.sh:89:if [[ -f /sys/devices/platform/soc/1d84000.ufshc/health_descriptor/eol_info ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/ufs/ufs_detail.sh:90:  bPreEOLInfo=$(cat /sys/devices/platform/soc/1d84000.ufshc/health_descriptor/eol_info)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/ufs/ufs_detail.sh:91:elif [[ -f /sys/devices/virtual/mi_memory/mi_memory_device/ufshcd0/dump_health_desc ]];then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/ufs/ufs_detail.sh:92:  bPreEOLInfo=$(cat /sys/devices/virtual/mi_memory/mi_memory_device/ufshcd0/dump_health_desc | grep bPreEOLInfo | cut -f2 -d '=' | cut -f2 -d ' ')
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/ufs/ufs_detail.sh:94:  bPreEOLInfo=$(cat /sys/kernel/debug/*.ufshc/dump_health_desc | grep bPreEOLInfo | cut -f2 -d '=' | cut -f2 -d ' ')
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/common/gapps_support.sh:3:installed=`pm list packages | grep com.google.android.gsf`
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/installer_scan/get.sh:3:installed=`pm list packages com.oplus.appdetail`
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/installer_scan/set.sh:15:pm $pm_cmd --user 0 com.oplus.appdetail 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/oppo.xml:17:                resetprop ro.boot.veritymode enforcing
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/oppo.xml:47:        <switch id="fas" exist="/proc/game_opt/disable_cpufreq_limit" shell="hidden">
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/oppo.xml:51:                if [[ $(cat /proc/game_opt/disable_cpufreq_limit) == '1' ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/oppo.xml:58:                path=/proc/game_opt/disable_cpufreq_limit
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/apps.xml:38:            <get>pm get-install-location | cut -f1 -d '['</get>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/apps.xml:40:                pm set-install-location $state
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/apps.xml:57:            visible="pm query-activities --brief -n com.android.permissioncontroller/com.android.packageinstaller.role.ui.DefaultAppListActivity | grep '/' > /dev/null &amp;&amp; echo 1" />
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/service.sh:5:for tz in /sys/class/thermal/*
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/service.sh:20:      wlan-therm|xo-therm|oplus_thermal_ipa)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/service.sh:30:stop horae
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/service.sh:35:# stop oplus_charger_hal_service
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/service.sh:36:# stop thermal-engine
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/gcm_set.sh:7:    setprop persist.vendor.camera.eis.enable $state;
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/gcm_set.sh:8:    setprop persist.vendor.camera.HAL3.enabled $state;
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/gcm_set.sh:16:    setprop persist.camera.HAL3.enabled $state;
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/apps/gcm_set.sh:17:    setprop persist.camera.eis.enable $state;
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/service.sh:11:    c0=/sys/devices/system/cpu/cpu0/core_ctl
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/service.sh:12:    c1=/sys/devices/system/cpu/cpu4/core_ctl
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/service.sh:13:    c2=/sys/devices/system/cpu/cpu7/core_ctl
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/service.sh:27:    lock_value -1 /sys/kernel/fpsgo/fbt/thrm_limit_cpu
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/service.sh:28:    lock_value -1 /sys/kernel/fpsgo/fbt/thrm_sub_cpu
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/service.sh:30:  sched_isolation_disable() {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/service.sh:32:      echo $i > /sys/devices/system/cpu/sched/set_sched_deisolation
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/service.sh:34:    chmod 000 /sys/devices/system/cpu/sched/set_sched_isolation
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/service.sh:39:    echo $i 0 0 > /proc/gpufreq/gpufreq_limit_table
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/service.sh:41:  for i in 'hard_userlimit_cpu_freq' 'hard_userlimit_freq_limit_by_others'; do
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/service.sh:48:    echo $i 0 0 > /proc/gpufreq/gpufreq_limit_table
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/service.sh:65:  lock_value 100 /sys/kernel/fpsgo/fbt/thrm_temp_th
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/service.sh:66:  lock_value -1 /sys/kernel/fpsgo/fbt/thrm_limit_cpu
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/service.sh:67:  lock_value -1 /sys/kernel/fpsgo/fbt/thrm_sub_cpu
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/service.sh:68:  sched_isolation_disable
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/tp/thermal.conf:11:/qtrg4s slopnhv4s s"sqolg2y%  su
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/tp/thermal_policy_08:11:/qtrg4s slopnhv4s s"sqolg2y%  su
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/tp/thermal.off.conf:11:/qtrg4s slopnhv4s s"sqolg2y%  su
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/d1x00/tp/ht120.mtc:7:/qtrg4s slopnhv4s s"sqolg2y%  su
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/common/magisk.sh:82:        setprop $1 $2 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/common/magisk.sh:93:        setprop $1 $2 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/common/qualcomm.sh:1:if [[ -f /sys/devices/soc0/machine ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/ufs/ufs_summary.sh:1:if [[ -f /sys/devices/platform/soc/1d84000.ufshc/health_descriptor/life_time_estimation_a ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/ufs/ufs_summary.sh:2:  bDeviceLifeTimeEstA=$(cat /sys/devices/platform/soc/1d84000.ufshc/health_descriptor/life_time_estimation_a)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/ufs/ufs_summary.sh:3:elif [[ -f /sys/devices/virtual/mi_memory/mi_memory_device/ufshcd0/dump_health_desc ]];then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/ufs/ufs_summary.sh:4:  bDeviceLifeTimeEstA=$(cat /sys/devices/virtual/mi_memory/mi_memory_device/ufshcd0/dump_health_desc | grep bDeviceLifeTimeEstA | cut -f2 -d '=' | cut -f2 -d ' ')
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/ufs/ufs_summary.sh:6:  bDeviceLifeTimeEstA=$(cat /sys/kernel/debug/*.ufshc/dump_health_desc 2>/dev/null | grep bDeviceLifeTimeEstA | cut -f2 -d '=' | cut -f2 -d ' ')
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/module_uninstall.sh:1:settings put global disable_dynamic_refresh_rate 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/service.sh:6:set_value 10 /sys/class/meizu/charger/wired_level
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/service.sh:7:set_value 10 /sys/class/meizu/wireless/wls_level
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/service.sh:9:set_value 10 /sys/class/meizu/charger/wired/wired_level
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/service.sh:10:set_value 10 /sys/class/meizu/wireless/wired/wls_level
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/service.sh:12:stop thermal-engine
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/uninstall.sh:2:setprop sys.extreme_gt.uninstall 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/other.xml:9:            am kill com.android.systemui 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/other.xml:21:        <action visible="item_exist.sh /sys/block/mmcblk0/device/life_time">
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/other.xml:81:            <param name="selected" multiple="multiple" value-sh="run thermal/value.sh" options-sh="run thermal/options.sh" />
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/other.xml:82:            <set>run thermal/set.sh</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/other.xml:163:                if [[ $(getprop persist.device_config.runtime_native.usap_pool_enabled) == 'true' || $(getprop persist.sys.usap_pool_enabled) == 'true' ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/other.xml:170:                prop=persist.device_config.runtime_native.usap_pool_enabled
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/other.xml:173:                setprop $prop true
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/other.xml:174:                setprop $prop2 true
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/other.xml:176:                setprop $prop false
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/other.xml:177:                setprop $prop2 false
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/other.xml:180:                echo 'OK, Please restart your phone.'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/uninstall.sh:2:setprop sys.extreme_gt.uninstall 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/dex2oat/threads_set.sh:39:    setprop dalvik.vm.boot-dex2oat-threads $boot 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/dex2oat/threads_set.sh:40:    setprop ro.sys.fw.dex2oat_thread_count $boot 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/dex2oat/threads_set.sh:45:    setprop dalvik.vm.dex2oat-threads $dex2oat 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/dex2oat/threads_set.sh:50:    setprop dalvik.vm.image-dex2oat-threads $image 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/dex2oat/compile.sh:7:for item in `pm list packages $app`
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/dex2oat/compile.sh:11:	cmd package compile -m $mode $app 1>/dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/resurgence/service.sh:20:# If the restart interval is less than 3 minutes
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:34:# sys_thermal_control_config.xml sys_thermal_control_config_gt.xml
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:35:boolValues="feature_enable_item feature_safety_test_enable_item aging_thermal_control_enable_item"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:37:for file in $(find $dirs -name "sys_thermal_control_config*.xml")
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:53:# sys_thermal_config.xml
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:54:xml_override 'sys_thermal_config.xml' "isOpen=0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:60:thermal_battery_temp=0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:125:# thermallevel_to_fps.xml
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:126:for file in $(find $dirs -name "thermallevel_to_fps.xml")
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:183:# game_thermal_config.xml
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:184:for file in $(find $dirs -name "game_thermal_config.xml")
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:190:<game_thermal_config>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:192:    <filter-name>game_thermal_config</filter-name>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:206:</game_thermal_config>' > $module$file
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:209:<game_thermal_config>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:211:    <filter-name>game_thermal_config</filter-name>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:225:</game_thermal_config>' > $module$file
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:255:# charging_thermal_config_default.txt charging_hyper_mode_config.txt
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:296:  cp -f $PAGE_WORK_DIR/extreme_gt/d1x00/tp/thermal_policy_08 $module/system/vendor/etc/.tp/.thermal_policy_08
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:297:  cp -f $PAGE_WORK_DIR/extreme_gt/d1x00/tp/thermal.conf $module/system/vendor/etc/.tp/thermal.conf
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/oppo/extreme_gt/setup.sh:298:  cp -f $PAGE_WORK_DIR/extreme_gt/d1x00/tp/thermal.off.conf $module/system/vendor/etc/.tp/thermal.off.conf
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/thermal/options.sh:1:find -L /system -name "*thermal*" 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/thermal/service.sh:1:rm /data/thermal/config/*
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/thermal/service.sh:2:rm /data/vendor/thermal/*
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/thermal/service.sh:4:p=$(getprop vendor.sys.thermal.data.path)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/developer/developer.xml:48:            <set>settings put secure show_first_crash_dialog_dev_option $state</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/developer/developer.xml:60:            <set>settings put system show_touches $state</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/emmc/emmc_summary.sh:1:if [[ -f /sys/block/mmcblk0/device/life_time ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/emmc/emmc_summary.sh:2:  bDeviceLifeTimeEstA=$(cat /sys/block/mmcblk0/device/life_time | cut -f1 -d ' ')
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:66:    local ged="/sys/module/ged/parameters"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:88:        echo "      <action title=\"固定频率\" shell=\"hidden\" reload=\"@GPU\" summary-sh=\"$import_utils gpu_freq_cur_khz\">"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:89:        echo '          <param title="频率" name="state" value-sh="'$import_utils gpu_freq_cur'">'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:91:        for freq in $(cat /proc/gpufreq/gpufreq_opp_dump | awk '{printf $4 "\n"}' | cut -f1 -d ",")
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:93:          echo "            <option value=\"$freq\">${freq}KHz</option>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:103:        echo "          <set>$import_utils gpu_freq</set>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:106:        # local freqs=$(cat /proc/gpufreq/gpufreq_opp_dump | awk '{printf $4 "\n"}' | cut -f1 -d ",")
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:107:        local get_shell="cat /proc/gpufreq/gpufreq_opp_freq | grep freq | awk '{printf \$4 \"\\\\n\"}' | cut -f1 -d ','"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:109:        echo "      <picker title=\"固定频率\" shell=\"hidden\" reload=\"@GPU\" summary-sh=\"$import_utils gpu_freq_cur_khz\">"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:112:        for freq in $(cat /proc/gpufreq/gpufreq_opp_dump | awk '{printf $4 "\n"}' | cut -f1 -d ",")
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:114:          echo "            <option value=\"$freq\">${freq}KHz</option>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:118:        echo "          <set>$import_utils gpu_freq</set>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:121:    echo "      <picker title=\"最高频率\" shell=\"hidden\" reload=\"@GPU\" summary-sh=\"$import_utils gpu_freq_max_freq_cur_khz\">"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:123:    for freq in $(cat /proc/gpufreq/gpufreq_opp_dump | awk '{printf $4 "\n"}' | cut -f1 -d ",")
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:125:      echo "            <option value=\"$freq\">${freq}KHz</option>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:128:    echo "          <get>$import_utils gpu_freq_max_freq_cur</get>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:129:    echo "          <set>$import_utils gpu_freq_max_freq</set>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:139:    switch_hidden 'GPU混合调频器(降压)' 'if [[ $(pidof gpu-scheduler) != "" ]]; then echo 1;fi' "$import_utils dimensity_hybrid_switch"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:145:        <set>am start -a android.intent.action.VIEW -d https://vtools.oss-cn-beijing.aliyuncs.com/addin/dimensity_hybrid_governor.zip</set>\
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:146:        <summary sh=\"if [[ '$(pidof gpu-scheduler)' != '' ]]; then echo '正在运行中';fi\" />\
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:152:    if [[ -f /sys/devices/system/cpu/sched/sched_boost ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:153:      echo "      <picker title=\"Sched Boost\" shell=\"hidden\">"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:155:      echo "            <option value=\"no boost\">no boost</option>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:156:      echo "            <option value=\"all boost\">all</option>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:157:      echo "            <option value=\"foreground boost\">foreground</option>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:159:      echo "          <get>$import_utils sched_boost_get</get>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:160:      echo "          <set>$import_utils sched_boost_set</set>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:164:    if [[ -f /sys/devices/system/cpu/eas/enable ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:178:  dvfsrc=/sys/devices/platform/10012000.dvfsrc/helio-dvfsrc
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:183:  cat $opp_table | while read freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:185:    if [[ "$freq" != "" ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:186:    d_opp=$(echo "${freq:4:2}")
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:187:    d_khz=$(echo ${freq:9})
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:192:  echo "          <set>$import_utils ddr_freq</set>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:202:    group_start 'PPM'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:206:    # group_start 'GED'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:210:if [[ -f /proc/gpufreq/gpufreq_opp_freq ]]
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:212:    group_start 'GPU'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:218:group_start 'CPU'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:222:if [[ -f /sys/devices/platform/10012000.dvfsrc/helio-dvfsrc/dvfsrc_force_vcore_dvfs_opp ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:223:group_start 'DRAM'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:229:group_start 'Voltage Offset'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:291:  group_start 'PowerPolicy'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:311:group_start '电池统计'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:312:    if [[ -f /sys/devices/platform/battery/reset_battery_cycle ]]
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:314:      action "清空电池循环计数" "将手机统计的电池循环次数归零（这并不会恢复电池容量）" "echo 1 &gt; /sys/devices/platform/battery/reset_battery_cycle"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:317:    if [[ -f /sys/devices/platform/battery/reset_aging_factor ]]
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:319:      action "清空电池老化率" "将手机统计的电池老化率数值清空（并不会恢复电池寿命，重置此值可能导致低电量时突然关机！）" "echo 1 &gt; /sys/devices/platform/battery/reset_aging_factor"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:324:group_start 'Thermal'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:325:echo "      <picker reload=\"@Thermal\" options-sh=\"ls -a /vendor/etc/.tp | grep -E 'conf|mtc|thermal'\" title=\"Profile\" desc=\"切换温控策略配置，选择ht120可能会过热重启！\" shell=\"hidden\">"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:326:echo "          <set>$import_utils thermal_profile</set>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:329:echo "      <switch title=\"SSPM Thermal Throttle\" shell=\"hidden\" desc=\"开启此选项会使一些自动降频行为失效，可能导致设备过热损坏或突然重启\" reload=\"@Thermal\">"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:330:echo "          <get>cat /proc/driver/thermal/sspm_thermal_throttle | cut -f2 -d ':'</get>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:331:echo "          <set>$import_utils sspm_thermal_throttle</set>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk.sh:336:echo "      <switch title=\"Thermal UltraLimit\" desc=\"将CPU过热关机温度(默认120°C)提高到145°C，可能导致设备过热损坏!!!\" reload=\"@Thermal\">"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/developer/adb_remote_set.sh:8:    setprop service.adb.tcp.port -1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/developer/adb_remote_set.sh:9:    stop adbd
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/developer/adb_remote_set.sh:11:    start adbd
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/developer/adb_remote_set.sh:13:    setprop service.adb.tcp.port ""
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/developer/adb_remote_set.sh:17:setprop service.adb.tcp.port $port;
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/developer/adb_remote_set.sh:18:stop adbd;
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/developer/adb_remote_set.sh:21:start adbd;
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/battery/battery.xml:22:                if [[ $(device_config get activity_manager_native_boot use_freezer) == 'true' ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/battery/battery.xml:34:                device_config put activity_manager_native_boot use_freezer $state
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:19:ls /system/vendor/etc/thermal*.conf | while read file
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:35:wired_level="/sys/class/meizu/charger/wired_level"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:36:wired_level2="/sys/class/meizu/charger/wired/wired_level"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:37:wls_level="/sys/class/meizu/wireless/wls_level"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:38:wls_level2="/sys/class/meizu/wireless/wired/wls_level"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:92:path = /sys/class/meizu/wireless/reverse_chg_enable
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:96:path = /sys/class/meizu/wireless/reverse_chg_enable
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:100:path = /sys/class/meizu/wireless/tx_fan_mode
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:104:path = /sys/class/meizu/wireless/tx_fan_mode
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:152:path = /sys/class/meizu/wireless/txid
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:156:rr=/system/vendor/etc/display/thermallevel_to_fps.xml
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:165:<ThermalLevelToFPSMap>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:169:            <ThermalLevelMap level="1" fps="144"/>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:170:            <ThermalLevelMap level="2" fps="144"/>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:171:            <ThermalLevelMap level="3" fps="144"/>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:172:            <ThermalLevelMap level="4" fps="144"/>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:173:            <ThermalLevelMap level="5" fps="144"/>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:174:            <ThermalLevelMap level="6" fps="144"/>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:175:            <ThermalLevelMap level="7" fps="144"/>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:176:            <ThermalLevelMap level="8" fps="144"/>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:177:            <ThermalLevelMap level="9" fps="144"/>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:178:            <ThermalLevelMap level="10" fps="144"/>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:181:</ThermalLevelToFPSMap>' > $module$rr
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:186:settings put global disable_dynamic_refresh_rate 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/flyme/extreme_gt_flyme/setup.sh:188:  settings put global flyme_force_rate 120
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:7:sched_boost_get() {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:8:  cat /sys/devices/system/cpu/sched/sched_boost | cut -f2 -d '='
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:11:sched_boost_set() {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:12:  if [[ "$state" == "no boost" ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:13:    echo 0 > /sys/devices/system/cpu/sched/sched_boost
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:14:  elif [[ "$state" == "all boost" ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:15:    echo 1 > /sys/devices/system/cpu/sched/sched_boost
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:16:  elif [[ "$state" == "foreground boost" ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:17:    echo 2 > /sys/devices/system/cpu/sched/sched_boost
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:22:  cat /sys/devices/system/cpu/eas/enable | cut -f2 -d '='
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:26:  chmod 664 /sys/devices/system/cpu/eas/enable
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:28:    echo 0 > /sys/devices/system/cpu/eas/enable
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:30:    echo 1 > /sys/devices/system/cpu/eas/enable
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:32:    echo 2 > /sys/devices/system/cpu/eas/enable
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:34:  chmod 444 /sys/devices/system/cpu/eas/enable
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:37:gpu_freq() {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:40:    echo 0 > /proc/gpufreq/gpufreq_opp_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:41:    echo -1 > /proc/gpufreq/gpufreq_opp_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:42:    echo 0 0 > /proc/gpufreq/gpufreq_fixed_freq_volt
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:47:      freq_row=$(grep "$state," /proc/gpufreq/gpufreq_opp_dump)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:48:      opp=${freq_row:1:2}
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:49:      echo 0 0 > /proc/gpufreq/gpufreq_fixed_freq_volt
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:50:      echo $state > /proc/gpufreq/gpufreq_opp_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:52:      echo 0 > /proc/gpufreq/gpufreq_opp_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:53:      echo $state $voltage > /proc/gpufreq/gpufreq_fixed_freq_volt
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:58:gpu_freq_cur() {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:59:  g_fixed_freq=$(cat /proc/gpufreq/gpufreq_fixed_freq_volt | grep g_fixed_freq)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:60:  if [[ "$g_fixed_freq" == "" ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:61:    freq=$(grep 'freq =' /proc/gpufreq/gpufreq_opp_freq | cut -f1 -d ',' | awk '{ print $4}')
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:62:    if [[ "$freq" == "" ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:65:      echo $freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:68:    echo -n $g_fixed_freq | awk '{ print $3}'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:72:gpu_freq_cur_khz(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:73:  freq=$(gpu_freq_cur)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:74:  if [[ "$freq" == "0" ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:77:    echo ${freq}KHz
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:81:ddr_freq () {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:82:  local boost=/sys/devices/platform/boot_dramboost/dramboost/dramboost
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:83:  if [[ -f $boost ]] && [[ "$state" == "1" ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:84:    echo 0 > $boost
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:86:  echo $state > /sys/devices/platform/10012000.dvfsrc/helio-dvfsrc/dvfsrc_force_vcore_dvfs_opp
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:118:# gpu_freq_max [oppIndex]
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:119:gpu_freq_max() {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:120:  lock_value $state /sys/kernel/ged/hal/custom_upbound_gpu_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:122:# gpu_freq_max_freq [freqKHZ]
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:123:gpu_freq_max_freq() {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:124:  gpu_opp=$(grep "freq = $state," /proc/gpufreq/gpufreq_opp_dump)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:125:  lock_value $((${gpu_opp:1:2}+0)) /sys/kernel/ged/hal/custom_upbound_gpu_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:128:  gpu_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:130:gpu_freq_max_freq_cur(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:131:  cur=$(cat /sys/kernel/ged/hal/custom_upbound_gpu_freq)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:133:  grep "\[$cur\]" /proc/gpufreq/gpufreq_opp_dump | awk '{printf $4 "\n"}' | cut -f1 -d ","
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:135:gpu_freq_max_freq_cur_khz(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:136:  cur=$(cat /sys/kernel/ged/hal/custom_upbound_gpu_freq)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:138:  khz=$(grep "\[$cur\]" /proc/gpufreq/gpufreq_opp_dump | awk '{printf $4 "\n"}' | cut -f1 -d ",")
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:142:thermal_profile() {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:145:    thermal_manager "$profile"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:164:  if [[ $(pidof gpu-scheduler) != '' ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:166:    killall gpu-scheduler 2>/dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:168:    nohup $module/gpu-scheduler > /dev/null 2>&1 &
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:173:  fix_freq_volt=$(cat /proc/gpufreq/gpufreq_fixed_freq_volt | grep g_fixed_vgpu)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:174:  if [[ "$fix_freq_volt" != "" ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:175:     echo $fix_freq_volt | awk '{ print $3}'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:182:  trip_0=$(grep trip_0 /proc/driver/thermal/tzcpu)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:191:sspm_thermal_throttle(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:194:    cat /proc/ppm/policy_status | grep -E 'PWR_THRO|THERMAL' | while read row
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:201:  echo $state > /proc/driver/thermal/sspm_thermal_throttle
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:213:    echo 'Modify Thermal Throttle…'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:217:    lock_val "1 ${t_limit}000 0 mtktscpu-sysrst $no_cooler 200" /proc/driver/thermal/tzcpu
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:218:    lock_val "1 ${t_limit}000 0 mtktspmic-sysrst $no_cooler 1000" /proc/driver/thermal/tzpmic
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:219:    lock_val "1 ${t_limit}000 0 mtktsbattery-sysrst $no_cooler 1000" /proc/driver/thermal/tzbattery
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:220:    lock_val "1 ${t_limit}000 0 mtk-cl-kshutdown00 $no_cooler 2000" /proc/driver/thermal/tzpa
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:221:    lock_val "1 ${t_limit}000 0 mtktscharger-sysrst $no_cooler 2000" /proc/driver/thermal/tzcharger
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:222:    lock_val "1 ${t_limit}000 0 mtktswmt-sysrst $no_cooler 1000" /proc/driver/thermal/tzwmt
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:223:    lock_val "1 ${t_limit}000 0 mtktsAP-sysrst $no_cooler 1000" /proc/driver/thermal/tzbts
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:224:    lock_val "1 ${t_limit}000 0 mtk-cl-kshutdown01 $no_cooler 1000" /proc/driver/thermal/tzbtsnrpa
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:225:    lock_val "1 ${t_limit}000 0 mtk-cl-kshutdown02 $no_cooler 1000" /proc/driver/thermal/tzbtspa
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:226:    echo "Thermal Throttle up to ${t_limit_ui}"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:227:    sspm_thermal_throttle
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:229:    ulock_val '3 117000 0 mtktscpu-sysrst 57000 0 cpu_adaptive_0 56000 0 cpu_adaptive_1 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 200' /proc/driver/thermal/tzcpu
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:230:    ulock_val '1 136000 0 mtktspmic-sysrst 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 1000' /proc/driver/thermal/tzpmic
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:231:    ulock_val '1 120000 0 mtk-cl-kshutdown00 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 2000' /proc/driver/thermal/tzpa
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:232:    ulock_val '1 120000 0 mtktscharger-sysrst 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 2000' /proc/driver/thermal/tzcharger
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:233:    ulock_val '1 120000 0 mtktswmt-sysrst 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 1000' /proc/driver/thermal/tzwmt
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:234:    ulock_val '5 100000 0 mtktsAP-sysrst 90000 0 mtk-cl-kshutdown03 58000 0 mtk-cl-cam00 52000 0 abcct_lcmoff 50000 0 abcct 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 1000' /proc/driver/thermal/tzbts
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:235:    ulock_val '4 120000 0 mtk-cl-kshutdown01 110000 0 no-cooler 100000 0 no-cooler 68000 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 1000' /proc/driver/thermal/tzbtsnrpa
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:236:    ulock_val '4 120000 0 mtk-cl-kshutdown02 110000 0 no-cooler 100000 0 no-cooler 90000 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 0 0 no-cooler 1000' /proc/driver/thermal/tzbtspa
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils.sh:239:  echo $state > /proc/driver/thermal/sspm_thermal_throttle
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:1:perfmgr=/sys/module/mtk_fpsgo/parameters/perfmgr_enable
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:2:pandora_feas=/sys/module/perfmgr_mtk/parameters/perfmgr_enable
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:3:ged_kpi=/sys/module/sspm_v3/holders/ged/parameters/is_GED_KPI_enabled
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:7:fpsgo=/sys/kernel/fpsgo/common/fpsgo_enable
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:8:fbt_ceiling=/sys/kernel/fpsgo/fbt/enable_ceiling
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:17:gpu_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:18:  # echo 'gpu_freq' $state
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:20:    echo -1 > /proc/gpufreqv2/fix_target_opp_index
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:21:    echo 0 0 > /proc/gpufreqv2/fix_custom_freq_volt
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:24:      freq_row=$(grep "$state," /proc/gpufreqv2/stack_signed_opp_table)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:25:      opp=${freq_row:1:2}
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:26:      echo 0 0 > /proc/gpufreqv2/fix_custom_freq_volt
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:28:        echo $opp $opp > /proc/gpufreqv2/fix_target_opp_index
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:30:        echo $opp > /proc/gpufreqv2/fix_target_opp_index
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:33:      echo -1 > /proc/gpufreqv2/fix_target_opp_index
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:34:      echo $state $voltage > /proc/gpufreqv2/fix_custom_freq_volt
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:39:gpu_freq_cur_khz() {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:40: gpu_freq_cur KHz
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:42:gpu_freq_cur_khz2() {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:43: freq=$(gpu_freq_cur)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:45: if [[ "$freq" != "" ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:47:     echo "${freq}KHz,$volt"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:49:     echo "$freq"KHz
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:53:gpu_freq_cur() {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:54:  fix_freq_volt=$(cat /proc/gpufreqv2/fix_custom_freq_volt | grep -v disabled)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:55:  if [[ "$fix_freq_volt" == "" ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:56:    opp=$(grep ':' /proc/gpufreqv2/fix_target_opp_index | cut -f2 -d ':')
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:61:      freq_row=$(grep "\[$opp\*\]" /proc/gpufreqv2/stack_signed_opp_table)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:62:      echo -n ${freq_row:11:7}$1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:65:     freq=$(echo -n $fix_freq_volt | awk '{ print $4}')
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:66:     echo $freq$1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:70:  fix_freq_volt=$(cat /proc/gpufreqv2/fix_custom_freq_volt | grep -v disabled)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:71:  if [[ "$fix_freq_volt" != "" ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:72:     echo $fix_freq_volt | awk '{ print $7}'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:76:ddr_freq () {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:77:  if [[ -d /sys/devices/platform/soc/1c00f000.dvfsrc ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:78:    dir='/sys/devices/platform/soc/1c00f000.dvfsrc'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:79:    dvfsrc=${dir}/mtk-dvfsrc-devfreq/devfreq/mtk-dvfsrc-devfreq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:80:  elif [[ -d /sys/devices/platform/1c00f000.dvfsrc ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:81:    dir='/sys/devices/platform/1c00f000.dvfsrc'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:82:    dvfsrc=${dir}/mtk-dvfsrc-devfreq/devfreq/mtk-dvfsrc-devfreq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:84:    dvfsrc=/sys/class/devfreq/mtk-dvfsrc-devfreq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:86:  chmod 664 $dvfsrc/min_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:87:  echo $state > $dvfsrc/min_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:88:  chmod 444 $dvfsrc/min_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:91:ddr_freq_fixed () {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:92:  if [[ -d /sys/devices/platform/soc/1c00f000.dvfsrc ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:93:    dir='/sys/devices/platform/soc/1c00f000.dvfsrc'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:95:    dir='/sys/devices/platform/1c00f000.dvfsrc'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:102:# gpu_freq_max [oppIndex]
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:103:gpu_freq_max() {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:104:  lock_value $state /sys/kernel/ged/hal/custom_upbound_gpu_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:106:# gpu_freq_max_freq [freqKHZ]
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:107:gpu_freq_max_freq() {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:108:  lock_value $state /sys/kernel/ged/hal/custom_upbound_gpu_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:111:  gpu_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:113:gpu_freq_max_freq_cur(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:114:  cur=$(cat /sys/kernel/ged/hal/custom_upbound_gpu_freq)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:116:  freq_row=$(grep "\[$cur\*\]" /proc/gpufreqv2/stack_signed_opp_table)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:117:  echo -n ${freq_row:11:7}$1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:119:gpu_freq_max_freq_cur_khz(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:120:  gpu_freq_max_freq_cur KHz
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:124:  dcs_mode=/sys/kernel/ged/hal/dcs_mode
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:140:  if [[ $(pidof gpu-scheduler) != '' ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:142:    killall gpu-scheduler 2>/dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:144:    if [[ -d /sys/kernel/debug ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:145:      umount /sys/kernel/debug 2>/dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:147:    mount -t debugfs none /sys/kernel/debug
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:148:    nohup $module/gpu-scheduler > /dev/null 2>&1 &
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_utils_v2.sh:168:  echo '4. 禁用Joyose仍可启用Perfmgr，但表现会略有不同'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/thermal/value.sh:1:find -L /system -name "*thermal*" | egrep -v ".so$" | egrep -v ".qti"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/haptic/set.sh:4:    settings put system haptic_feedback_infinite_intensity $value
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/img/vendor_boot_rec.sh:36:  setprop $prop "$p_value"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/thermal/set.sh:1:module_dir=/data/adb/modules/scene_thermal_remover
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/thermal/set.sh:22:props='id=scene_thermal_remover
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/thermal/set.sh:23:name=[SCENE]ThermalRemover
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/thermal/set.sh:26:description=Replace the thermal-engine program with an empty file
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/thermal/set.sh:30:module_files=$PAGE_WORK_DIR/thermal
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/sensor_values.sh:3:# for sensor in /sys/class/thermal/*
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/sensor_values.sh:5:cd /sys/class/thermal/
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/sensor_values.sh:15:# cat thermal_zone5/temp
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/emmc/emmc_detail.sh:1:if [[ -f /sys/block/mmcblk0/device/life_time ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/other/emmc/emmc_detail.sh:2:  bDeviceLifeTimeEstA=$(cat /sys/block/mmcblk0/device/life_time | cut -f1 -d ' ')
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddrqos.sh:1:path=/sys/devices/system/cpu/bus_dcvs/DDRQOS
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddrqos.sh:9:get_min_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddrqos.sh:10:  cat $path/*/min_freq | head -1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddrqos.sh:12:get_max_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddrqos.sh:13:  cat $path/*/max_freq | head -1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddrqos.sh:15:set_min_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddrqos.sh:16:  for file in $path/*/min_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddrqos.sh:21:set_max_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddrqos.sh:22:  for file in $path/*/max_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddrqos.sh:27:get_boost_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddrqos.sh:28:  cat $path/boost_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddrqos.sh:30:set_boost_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddrqos.sh:31:  lock_value $state $path/boost_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddrqos.sh:35:  for item in $(cat $path/available_frequencies)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:6:        <switch confirm="true" visible=". ./kr-script/qualcomm/msm_booster_support.sh">
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:7:            <title>Performance Boost Config</title>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:9:            <get>. ./kr-script/qualcomm/msm_booster_get.sh</get>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:10:            <set>. ./kr-script/qualcomm/msm_booster_set.sh</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:22:            <title>Max Freq</title>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:23:            <get>run ddr.sh get_max_freq</get>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:24:            <set>run ddr.sh set_max_freq</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:25:            <summary sh="run ddr.sh get_max_freq" />
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:28:            <title>Min Freq</title>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:29:            <get>run ddr.sh get_min_freq</get>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:30:            <set>run ddr.sh set_min_freq</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:31:            <summary sh="run ddr.sh get_min_freq" />
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:34:            <title>Boost Freq</title>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:35:            <get>run ddr.sh get_boost_freq</get>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:36:            <set>run ddr.sh set_boost_freq</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:37:            <summary sh="run ddr.sh get_boost_freq" />
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:43:            <title>Max Freq</title>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:44:            <get>run ddrqos.sh get_max_freq</get>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:45:            <set>run ddrqos.sh set_max_freq</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:46:            <summary sh="run ddrqos.sh get_max_freq" />
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:49:            <title>Min Freq</title>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:50:            <get>run ddrqos.sh get_min_freq</get>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:51:            <set>run ddrqos.sh set_min_freq</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:52:            <summary sh="run ddrqos.sh get_min_freq" />
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:55:            <title>Boost Freq</title>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:56:            <get>run ddrqos.sh get_boost_freq</get>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:57:            <set>run ddrqos.sh set_boost_freq</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:58:            <summary sh="run ddrqos.sh get_boost_freq" />
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:64:            <title>Max Freq</title>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:65:            <get>run l3.sh get_max_freq</get>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:66:            <set>run l3.sh set_max_freq</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:67:            <summary sh="run l3.sh get_max_freq" />
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:70:            <title>Min Freq</title>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:71:            <get>run l3.sh get_min_freq</get>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:72:            <set>run l3.sh set_min_freq</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:73:            <summary sh="run l3.sh get_min_freq" />
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:76:            <title>Boost Freq</title>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:77:            <get>run l3.sh get_boost_freq</get>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:78:            <set>run l3.sh set_boost_freq</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:79:            <summary sh="run l3.sh get_boost_freq" />
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:85:            <title>Max Freq</title>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:86:            <get>run llcc.sh get_max_freq</get>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:87:            <set>run llcc.sh set_max_freq</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:88:            <summary sh="run llcc.sh get_max_freq" />
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:91:            <title>Min Freq</title>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:92:            <get>run llcc.sh get_min_freq</get>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:93:            <set>run llcc.sh set_min_freq</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:94:            <summary sh="run llcc.sh get_min_freq" />
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:97:            <title>Boost Freq</title>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:98:            <get>run llcc.sh get_boost_freq</get>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:99:            <set>run llcc.sh set_boost_freq</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:100:            <summary sh="run llcc.sh get_boost_freq" />
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:106:            exist="/sys/module/perfmgr/parameters/perfmgr_enable"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:108:            <get>cat /sys/module/perfmgr/parameters/perfmgr_enable</get>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/qualcomm.xml:110:                path=/sys/module/perfmgr/parameters/perfmgr_enable
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:4:perfmgr=/sys/module/mtk_fpsgo/parameters/perfmgr_enable
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:5:pandora_feas=/sys/module/perfmgr_mtk/parameters/perfmgr_enable
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:6:fbt_ceiling=/sys/kernel/fpsgo/fbt/enable_ceiling
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:10:fpsgo=/sys/kernel/fpsgo/common/fpsgo_enable
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:75:        echo "      <action title=\"固定频率\" shell=\"hidden\" reload=\"@GPU\" summary-sh=\"$import_utils gpu_freq_cur_khz2\">"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:76:        echo '          <param title="频率" name="state" value-sh="'$import_utils gpu_freq_cur'">'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:78:        for freq in $(cat /proc/gpufreqv2/stack_signed_opp_table | awk '{printf $3 "\n"}' | cut -f1 -d ",")
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:80:          echo "            <option value=\"$freq\">${freq}KHz</option>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:90:        echo "          <set>$import_utils gpu_freq</set>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:93:        echo "      <picker title=\"固定频率\" shell=\"hidden\" reload=\"@GPU\" summary-sh=\"$import_utils gpu_freq_cur_khz\">"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:96:        for freq in $(cat /proc/gpufreqv2/stack_signed_opp_table | awk '{printf $3 "\n"}' | cut -f1 -d ",")
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:98:          echo "            <option value=\"$freq\">${freq}KHz</option>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:101:        echo "          <get>$import_utils gpu_freq_cur</get>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:102:        echo "          <set>$import_utils gpu_freq</set>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:106:    echo "      <picker title=\"最高频率\" shell=\"hidden\" reload=\"@GPU\" summary-sh=\"$import_utils gpu_freq_max_freq_cur_khz\">"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:108:    cat /proc/gpufreqv2/stack_signed_opp_table | while read freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:110:      echo "            <option value=\"$(echo ${freq:1:2})\">$(echo $freq | awk '{printf $3 "\n"}' | cut -f1 -d ",")KHz</option>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:113:    echo "          <get>$import_utils gpu_freq_max_freq_cur</get>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:114:    echo "          <set>$import_utils gpu_freq_max_freq</set>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:118:    dcs_mode=/sys/kernel/ged/hal/dcs_mode
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:123:    ged_kpi=/sys/module/sspm_v3/holders/ged/parameters/is_GED_KPI_enabled
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:134:    switch_hidden 'GPU混合调频器(降压)' 'if [[ $(pidof gpu-scheduler) != "" ]]; then echo 1;fi' "$import_utils dimensity_hybrid_switch"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:140:        <set>am start -a android.intent.action.VIEW -d https://vtools.oss-cn-beijing.aliyuncs.com/addin/dimensity_hybrid_governor.zip</set>\
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:141:        <summary sh=\"if [[ '$(pidof gpu-scheduler)' != '' ]]; then echo '正在运行中';fi\" />\
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:164:  dir='/sys/devices/platform/1c00f000.dvfsrc'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:165:  if [[ -d /sys/devices/platform/soc/1c00f000.dvfsrc ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:166:    dir='/sys/devices/platform/soc/1c00f000.dvfsrc'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:168:  dvfsrc=${dir}/mtk-dvfsrc-devfreq/devfreq/mtk-dvfsrc-devfreq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:169:  opp_table=$dvfsrc/available_frequencies
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:170:  echo "      <picker id=\"DDR-MIN-FREQ\" title=\"DDR MinFreq\" shell=\"hidden\" reload=\"@DRAM\">"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:173:  for freq in $(cat $opp_table)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:175:    if [[ "$freq" != "" ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:176:    echo "            <option value=\"$freq\">${freq}hz</option>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:180:  echo "          <set>$import_utils ddr_freq</set>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:181:  echo "          <get>cat $dvfsrc/min_freq</get>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:186:  if [[ -d /sys/devices/platform/soc/1c00f000.dvfsrc ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:187:    dir='/sys/devices/platform/soc/1c00f000.dvfsrc'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:189:    dir='/sys/devices/platform/1c00f000.dvfsrc'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:196:  grep '\[OPP' $opp_table | while read freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:198:    if [[ "$freq" != "" ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:199:    d_opp=$(echo "${freq:4:2}")
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:200:    d_khz=$(echo ${freq:9})
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:205:  echo "          <set>$import_utils ddr_freq_fixed</set>"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:213:if [[ -f /proc/gpufreqv2/stack_signed_opp_table ]]
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:215:  group_start 'GPU'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:220:group_start 'FPSGO/FEAS'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/mtk/mtk_v2.sh:224:group_start 'DRAM'
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui_update_set.sh:18:    pm clear com.android.updater 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui_update_set.sh:34:        pm clear com.android.updater 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/current.sh:3:install_dir="/data/vendor/thermal/config"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/current.sh:5:if [[ -f "$install_dir/thermal-engine.current.ini" ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/current.sh:7:    mode=`cat "$install_dir/thermal-engine.current.ini"`
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/current.sh:8:elif [[ -f "$install_dir/thermal.current.ini" ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/current.sh:10:    mode=`cat "$install_dir/thermal.current.ini"`
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/msm_booster_get.sh:4:output=/system/vendor/etc/perf/perfboostsconfig.xml
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/msm_booster_get.sh:10:      echo '检测到其它模块覆盖了perfboostsconfig.xml' 1>&2
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/msm_perfd_set.sh:8:stop perfd
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui-thermal.xml:4:    <group id="thermal">
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui-thermal.xml:5:        <picker id="mi-thermal-local" reload="thermal"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui-thermal.xml:7:            desc="替换到/data/vendor/thermal，无需重启手机立即生效。配置根据系统温控文件，由程序自动处理生成，请确保你的系统自带温控是官方原版！"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui-thermal.xml:8:            options-sh="(wget 'http://127.0.0.1:8765/miui-thermal' -q -O miui-thermal.ini &amp;&amp; cat miui-thermal.ini &amp;&amp; rm miui-thermal.ini) || curl 'http://127.0.0.1:8765/miui-thermal'">
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui-thermal.xml:9:            <summary sh="run thermal_conf3/summary.sh" />
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui-thermal.xml:10:            <get>run thermal_conf3/current.sh</get>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui-thermal.xml:11:            <set>run thermal_conf3/config.sh local</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/developer/hwui_render/set.sh:9:        setprop $1 $2 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/developer/hwui_render/set.sh:55:    setprop $prop $renderer
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/msm_booster_set.sh:6:output=/system/vendor/etc/perf/perfboostsconfig.xml
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/l3.sh:1:path=/sys/devices/system/cpu/bus_dcvs/L3
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/l3.sh:9:get_min_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/l3.sh:10:  cat $path/*/min_freq | head -1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/l3.sh:12:get_max_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/l3.sh:13:  cat $path/*/max_freq | head -1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/l3.sh:15:set_min_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/l3.sh:16:  for file in $path/*/min_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/l3.sh:21:set_max_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/l3.sh:22:  for file in $path/*/max_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/l3.sh:28:get_boost_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/l3.sh:29:  cat $path/boost_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/l3.sh:31:set_boost_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/l3.sh:32:  lock_value $state $path/boost_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/l3.sh:36:  for item in $(cat $path/available_frequencies)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/llcc.sh:1:path=/sys/devices/system/cpu/bus_dcvs/LLCC
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/llcc.sh:8:get_min_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/llcc.sh:9:  cat $path/*/min_freq | head -1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/llcc.sh:11:get_max_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/llcc.sh:12:  cat $path/*/max_freq | head -1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/llcc.sh:14:set_min_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/llcc.sh:15:  for file in $path/*/min_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/llcc.sh:20:set_max_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/llcc.sh:21:  for file in $path/*/max_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/llcc.sh:27:get_boost_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/llcc.sh:28:  cat $path/boost_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/llcc.sh:30:set_boost_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/llcc.sh:31:  lock_value $state $path/boost_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/llcc.sh:35:  for item in $(cat $path/available_frequencies)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddr.sh:1:path=/sys/devices/system/cpu/bus_dcvs/DDR
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddr.sh:9:get_min_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddr.sh:10:  cat $path/*/min_freq | head -1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddr.sh:12:get_max_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddr.sh:13:  cat $path/*/max_freq | head -1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddr.sh:15:set_min_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddr.sh:16:  for file in $path/*/min_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddr.sh:21:set_max_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddr.sh:22:  for file in $path/*/max_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddr.sh:28:get_boost_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddr.sh:29:  cat $path/boost_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddr.sh:31:set_boost_freq(){
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddr.sh:32:  lock_value $state $path/boost_freq
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/ddr.sh:36:  for item in $(cat $path/available_frequencies)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/qualcomm/msm_booster_support.sh:3:path=/system/vendor/etc/perf/perfboostsconfig.xml
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/download.sh:4:# https://vtools.oss-cn-beijing.aliyuncs.com/Scene-Online/Thermal/msmnile/cepheus/extreme/info.txt
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/download.sh:5:host="https://vtools.oss-cn-beijing.aliyuncs.com/Scene-Online/Thermal"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/download.sh:6:# $host/msmnile/cepheus/thermal_files.ini
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/download.sh:8:all_file_names=$(curl -s $host/$platform/$device/thermal_files.ini)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/network_checker_set.sh:4:settings put global airplane_mode_on 1 > /dev/null 2>&1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/network_checker_set.sh:5:am broadcast -a android.intent.action.AIRPLANE_MODE --ez state true > /dev/null 2>&1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/network_checker_set.sh:22:    settings put global captive_portal_mode 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/network_checker_set.sh:34:    settings put global captive_portal_server https:$server_url
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/network_checker_set.sh:35:    settings put global captive_portal_http_url http:$server_url
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/network_checker_set.sh:36:    settings put global captive_portal_https_url https:$server_url
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/network_checker_set.sh:37:    settings put global captive_portal_use_https 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/network_checker_set.sh:38:    settings put global captive_portal_mode 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/network_checker_set.sh:39:    settings put global captive_portal_detection_enabled 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/network_checker_set.sh:44:settings put global airplane_mode_on 0 > /dev/null 2>&1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/network_checker_set.sh:45:am broadcast -a android.intent.action.AIRPLANE_MODE --ez state false > /dev/null 2>&1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/pl/set.sh:8:    settings put global low_power_trigger_level $level
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/pl/set.sh:16:    settings put global low_power_trigger_level_max $levelmax
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ntp_set.sh:6:    settings put global ntp_server $state
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/edge/set.sh:4:    settings put system edge_type diy_suppression
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/edge/set.sh:5:    settings put system edge_size $value
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:9:thermal_dir="/data/vendor/thermal"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:10:install_dir="$thermal_dir/config"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:11:mode_state_save="$install_dir/thermal.current.ini"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:14:thermal_files=(
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:20:    resource_dir="$START_DIR/miui-thermal/$mode_code"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:25:    thermal_files=$(cat $resource_dir/files.ini)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:28:    resource_dir="./kr-script/miui/thermal_conf3/$platform/$mode"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:29:    # 覆盖 thermal_files
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:30:    # source ./kr-script/miui/thermal_conf3/$platform/thermal_files.sh
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:31:    source ./kr-script/miui/thermal_conf3/download.sh
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:37:  old_state_save="$old_dir/thermal.current.ini"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:40:    for thermal in ${thermal_files[@]}; do
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:41:      if [[ -f $old_dir/$thermal ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:42:        rm -f $old_dir/$thermal
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:53:  chmod -R 0771 $thermal_dir
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:54:  chown -R root:system $thermal_dir/config 2>/dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:55:  chown root:system $thermal_dir/decrypt.txt 2>/dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:56:  chown system:system $thermal_dir/report.dump 2>/dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:57:  chown system:system $thermal_dir/thermal-global-mode 2>/dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:58:  chown system:system $thermal_dir/thermal.dump 2>/dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:59:  restorecon -DFR $thermal_dir 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:63:clear_thermal_dir() {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:65:  for dir in $thermal_dir $install_dir
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:86:uninstall_thermal() {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:93:  clear_thermal_dir
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:95:     echo "发现 $thermal_dir 目录遭到破坏" 1>&2
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:98:     echo "以免 $thermal_dir 被被再次破坏"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:104:install_thermal() {
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:105:  uninstall_thermal
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:116:        find_result=`find "$magisk_dir/$module/system" -name "*thermal*" -type f`
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:127:  # c_dir=$(getprop vendor.sys.thermal.data.path)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:128:  # if [[ "$c_dir" != "$thermal_dir" && "$c_dir" != "$thermal_dir/" ]];then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:129:  #   echo 'vendor.sys.thermal.data.path 值与预期不符' 1>&2
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:130:  #   echo '当前指定为：' $(getprop vendor.sys.thermal.data.path) 1>&2
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:153:  # for thermal in ${thermal_files[@]}; do
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:154:  #   if [[ -f "$resource_dir/$thermal" ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:155:  #     echo '复制' $thermal
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:156:  #     cp "$resource_dir/$thermal" "$install_dir/$thermal"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:157:  #     chmod 644 "$install_dir/$thermal"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:159:  #     echo '复制' $thermal
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:160:  #     cp "$resource_dir/general.conf" "$install_dir/$thermal"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:161:  #     chmod 644 "$install_dir/$thermal"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:163:  #   dos2unix "$install_dir/$thermal" 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:166:  # ls $resource_dir | while read thermal; do
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:167:  echo "$all_file_names" | dos2unix | while read thermal; do
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:168:    if [[ -f "$resource_dir/$thermal" ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:169:      echo '复制' $thermal
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:170:      cp "$resource_dir/$thermal" "$install_dir/$thermal"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:171:      chmod 444 "$install_dir/$thermal"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:173:      echo '复制' $thermal
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:174:      cp "$resource_dir/general.conf" "$install_dir/$thermal"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:175:      chmod 444 "$install_dir/$thermal"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:177:      echo '跳过' $thermal
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:179:    dos2unix "$install_dir/$thermal" 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:191:  uninstall_thermal
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:193:  install_thermal
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:197:for p in 'mi_thermald' 'thermal-engine'; do
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:199:  stop $p 2>/dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/config.sh:200:  start $p 2>/dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/support.sh:4:options=$(curl -s https://vtools.oss-cn-beijing.aliyuncs.com/Scene-Online/Thermal/$platform/$device/options.ini)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/options.sh:5:options=$(curl -s https://vtools.oss-cn-beijing.aliyuncs.com/Scene-Online/Thermal/$platform/$device/options.ini)
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/summary.sh:3:install_dir="/data/vendor/thermal/config"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/thermal_conf3/summary.sh:4:mode_state_save="$install_dir/thermal.current.ini"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/developer/hide_errordialog_set.sh:1:settings put global hide_error_dialogs $state;
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/developer/anr_set.sh:1:settings put secure anr_show_background $state;
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui.xml:30:                settings put system handy_mode_state 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui.xml:31:                settings put system handy_mode_state $state
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui.xml:37:            <set>settings put system handy_mode_size $state</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui.xml:56:                settings put system handy_mode_state 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui.xml:57:                settings put system handy_mode_state 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui.xml:58:                am broadcast -a miui.action.handymode.changemode --ei mode $state
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui.xml:86:    <group title="温控" id="thermal">
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui.xml:88:            id="miui-thermal"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui.xml:89:            config="miui-thermal.xml"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/miui/miui.xml:114:                am force-stop com.android.camera 2>/dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:3:settings put global low_power $state;
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:4:settings put global low_power_sticky $state;
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:20:    stop "$1" 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:30:    settings put global app_auto_restriction_enabled true
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:33:    settings put global forced_app_standby_enabled 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:36:    settings put global app_standby_enabled 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:39:    settings put global forced_app_standby_for_small_battery_enabled 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:45:      settings put system ai_preload_user_state 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:49:    settings put global low_power 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:50:    settings put global low_power_sticky 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:59:    if [[ -e /sys/zte_power_debug/switch ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:60:        echo 0 > /sys/zte_power_debug/switch
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:62:    if [[ -e /sys/zte_power_debug/debug_enabled ]]; then
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:63:        echo N > /sys/kernel/debug/debug_enabled
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:65:    stop cnss_diag 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:67:    stop subsystem_ramdump 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:68:    #stop thermal-engine 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:69:    stop tcpdump 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:84:            am set-inactive $app true > /dev/null 2>&1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:85:            am set-idle $app true > /dev/null 2>&1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:87:            am make-uid-idle --user current $app > /dev/null 2>&1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:90:    for app in `pm list packages -3  | cut -f2 -d ':'`
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:92:        am set-inactive $app true > /dev/null 2>&1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:93:        am set-idle $app true > /dev/null 2>&1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:94:        am make-uid-idle --user current $app > /dev/null 2>&1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:106:    settings put global app_auto_restriction_enabled false
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:109:    settings put global forced_app_standby_enabled 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:112:    settings put global app_standby_enabled 1
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:115:    settings put global forced_app_standby_for_small_battery_enabled 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:118:    settings put global low_power 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/ps/set.sh:119:    settings put global low_power_sticky 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/rotation.sh:3:settings put system accelerometer_rotation 0
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/rotation.sh:7:settings put system user_rotation $state
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/common/props.sh:81:        setprop $1 $2 2> /dev/null
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/night_mode.sh:1:settings put secure ui_night_mode $state
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/aosp.xml:16:            <set>settings put global heads_up_notifications_enabled $state</set>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/aosp.xml:66:                <option value="su">ROOT权限</option>
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/aosp.xml:72:                settings put secure icon_blacklist "$state"
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/free_form/set.sh:3:settings put global enable_freeform_support $state
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/extracted/base/assets/kr-script/aosp/free_form/set.sh:5:echo "settings put global enable_freeform_support $state"

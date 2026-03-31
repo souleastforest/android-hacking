@@ -1,0 +1,17 @@
+cgroup_app="com.tencent.mobileqq"
+cgroup_mem=""
+
+if [[ -e /sys/fs/cgroup/memory/memory.swappiness ]]; then
+  scene_memcg="/sys/fs/cgroup/memory"
+elif [[ -d /dev/memcg ]]; then
+  scene_memcg="/dev/memcg"
+fi
+
+if [[ "$scene_memcg" != "" ]] || [[ $(grep memory /proc/$pid/cgroup | awk -F '/' '{print $2}') != '' ]]; then
+    pgrep -f $cgroup_app | while read pid; do
+        echo $pid > $scene_memcg$cgroup_mem/cgroup.procs
+        #ls /proc/$pid/task | while read tid; do
+        #   echo $tid > $scene_memcg$cgroup_mem/tasks
+        #done
+    done
+fi

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+    <title>支付向导</title>
+    <link rel="stylesheet" type="text/css" href="./payment-guide/index.css">
+  </head>
+  <body>
+    <div class="radius">
+      <div class="content">
+        <h4>一、如何激活</h4>
+        <div>
+          <ul>
+            <li>
+              <div class="t">1. 订单验证</div>
+              <div class="d"><span class="hl">兑换码</span>即微信转账单号(格式如1000010******)</div>
+              <div class="d">* 积分会在12~24小时左右充值到账</div>
+              <div class="d">* 部分设备支付后24小时内无法验证，需耐心等待</div>
+            </li>
+            <li>
+              <div class="t">2. 特殊情况</div>
+              <div class="d">如果登录并验证单号24小时后，积分仍未到账</div>
+              <div class="d">请通过邮件<a href="mailto:helloklf@outlook.com?subject=Scene5%E6%94%AF%E4%BB%98%E8%AE%B0%E5%BD%95">helloklf@outlook.com</a>联系我们。</div>
+            </li>
+          </ul>
+        </div>
+        <hr>
+
+        <h4>二、套餐定价</h4>
+        <ul>
+          <!--<li>
+            <div class="t">辞旧迎新 <span class="price">￥20</span>&nbsp;<span class="o-price">￥30</span></div>
+            <div class="d">1台永久激活的设备，登录额外送20积分</div>
+            <div class="d">* 此套餐<span class="hl" id="timeout">??天</span>后下架</div>
+          </li>-->
+          <li>
+            <div class="t">积分套餐 <span class="price"><small>￥</small>15</span></div>
+            <div class="d">增加20积分，兑换后记录到账号</div>
+            <div class="d">每1台设备每30天消耗1积分</div>
+            <div class="d">同一设备至多消耗16积分</div>
+            <div class="d hl">请不要支付与套餐定价不符的金额！</div>
+          </li>
+        </ul>
+        <hr>
+  
+        <h4>三、如何付款</h4>
+        <div>
+          <ul>
+            <li>
+              <div class="d">
+                <div class="hl">请用【摄像头】扫下方二维码。</div>
+              </div>
+              <br>
+              <div class="t">
+                <img class="qr" id="qrCode" hidden src="" alt="">
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var host = ".";
+    var i;
+    var m = new Date().getMinutes();
+    var qr;
+    if (m >= 40) {
+      i = 1;
+    } else if (m > 20) {
+      i = 2;
+    } else {
+      i = 3;
+    }
+    var qr = host + '/payment-guide/qr-wechat' + i + '.png';
+    document.getElementById('qrCode').src = qr + '?t' + new Date().getTime();
+  </script>
+</html>

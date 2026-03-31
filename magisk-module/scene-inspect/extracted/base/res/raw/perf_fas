@@ -1,0 +1,157 @@
+[
+  {
+    "title": "General",
+    "items": [
+      {
+        "title": "FAS引擎",
+        "desc": "选择优先使用的FAS实现，默认优先系统自带的FAS，如果效果不佳可以尝试切换为Scene FAS",
+        "visible": "always",
+        "field": {
+          "default": "feas|scene8|scene7",
+          "path": "fas_engine",
+          "type": "select",
+          "options": [
+            { "label": "Official FAS | Scene FAS", "value": "feas|scene8|scene7" },
+            { "label": "Scene FAS", "value": "scene8|scene7" }
+          ]
+        }
+      },
+      {
+        "title": "小核调速器",
+        "desc": "FAS/FEAS工作期间，小核使用的频率调速器",
+        "visible": "always",
+        "field": {
+          "path": "governor-little",
+          "type": "select",
+          "options": "./fas-params/governors"
+        }
+      },
+      {
+        "title": "中核调速器",
+        "desc": "FAS/FEAS工作期间，中核使用的频率调速器",
+        "visible": "always",
+        "field": {
+          "path": "governor-middle",
+          "type": "select",
+          "options": "./fas-params/governors"
+        }
+      },
+      {
+        "title": "大核调速器",
+        "desc": "FAS/FEAS工作期间，大核使用的频率调速器。如果帧率表现不佳，可以尝试切换为performance",
+        "visible": "always",
+        "field": {
+          "path": "governor-prime",
+          "type": "select",
+          "options": "./fas-params/governors"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Scene FAS",
+    "target_soc": ["kona", "msmnile"],
+    "items": [
+      {
+        "title": "@string:fas_freq_offset",
+        "desc": "@string:fas_freq_offset_desc",
+        "visible": "always",
+        "field": {
+          "path": "average-frequency",
+          "type": "number",
+          "min": -3,
+          "max": 3
+        }
+      },
+      {
+        "title": "线程分析",
+        "desc": "根据重负载线程调整中核、大核性能配备，从而减少中核产生的性能浪费",
+        "field": {
+          "default": "false",
+          "path": "threads-analyser",
+          "type": "boolean"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Scene FAS",
+    "exclude_soc": ["kona", "msmnile"],
+    "items": [
+      {
+        "title": "频率控制目标",
+        "desc": "使用FAS限制哪些cluster的频率",
+        "visible": "always",
+        "field": {
+          "path": "target_cluster",
+          "type": "select",
+          "default": "0",
+          "options": [
+            { "label": "全部", "value": "0" },
+            { "label": "大核和中核", "value": "1" },
+            { "label": "大核", "value": "2" }
+          ]
+        }
+      },
+      {
+        "title": "帧率微调(‰)",
+        "desc": "千分比微调目标帧率，-50表示目标帧率-5%",
+        "visible": "always",
+        "field": {
+          "path": "target_fps_offset",
+          "type": "number",
+          "min": -20,
+          "max": 10,
+          "default": "0"
+        }
+      },
+      {
+        "title": "实时修正",
+        "desc": "允许FAS引擎根据帧率方差，动态调整帧间隔(时间)平滑算法",
+        "visible": "always",
+        "field": {
+          "default": "1",
+          "path": "variance-adjust",
+          "type": "select",
+          "options": [
+            { "label": "禁用", "value": "0" },
+            { "label": "平均延迟", "value": "1" }
+          ]
+        }
+      },
+      {
+        "title": "保守升频",
+        "desc": "在未发生连续卡顿前不提升频率，最大程度压制频率",
+        "field": {
+          "path": "conservative",
+          "type": "boolean"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Debug",
+    "items": [
+      {
+        "title": "@string:fas_notify",
+        "desc": "@string:fas_notify_desc",
+        "visible": "always",
+        "field": {
+          "path": "status-notify",
+          "type": "boolean",
+          "default": "0"
+        }
+      },
+      {
+        "title": "手势检测",
+        "desc": "检测到屏幕边缘触发手势操作时，自动暂停FAS减少应用切换动画卡顿，关闭此项可略微降低功耗。",
+        "visible": "never",
+        "field": {
+          "path": "gesture-detect",
+          "type": "boolean",
+          "default": "0"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,2 @@
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/reports/aapt-manifest-xmltree.txt:370:        A: android:name(0x01010003)="com.omarea.vtools.activities.ActivityMiuiThermal" (Raw: "com.omarea.vtools.activities.ActivityMiuiThermal")
+/Users/saigyoujiyuyuko/Desktop/hacking-^_^/magisk-module/scene-inspect/reports/aapt-manifest-xmltree.txt:378:        A: android:name(0x01010003)="com.omarea.vtools.activities.ActivityMiuiCloudProfile" (Raw: "com.omarea.vtools.activities.ActivityMiuiCloudProfile")

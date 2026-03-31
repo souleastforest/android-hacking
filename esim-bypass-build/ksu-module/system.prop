@@ -1,0 +1,11 @@
+# eSIM properties for marble (POCO F5) - esim_bypass_marble KernelSU module
+# by souleastforest
+#
+# These are applied at early boot via the module system.prop mechanism.
+# service.sh also calls resetprop at runtime for redundancy (ro.* override).
+
+# Mark device as eUICC capable
+ro.telephony.euicc=1
+
+# Advertise 2 SIM slots so EuiccManager thinks slot 1 is available
+ro.telephony.sim_slots.count=2

@@ -1,0 +1,223 @@
+[
+  {
+    "title": "@string:rr_apps",
+    "items": [
+      {
+        "title": "@string:rr_active",
+        "desc": "@string:rr_active_desc",
+        "visible": "always",
+        "field": {
+          "default": "high",
+          "path": "apps-default",
+          "type": "select",
+          "options": [
+            { "label": "@string:rr_120", "value": "high" },
+            { "label": "@string:rr_90", "value": "middle" },
+            { "label": "@string:rr_60", "value": "low" }
+          ]
+        }
+      },
+      {
+        "title": "@string:rr_inactive",
+        "desc": "@string:rr_inactive_desc",
+        "visible": "always",
+        "field": {
+          "default": "low",
+          "path": "apps-inactive",
+          "type": "select",
+          "options": [
+            { "label": "@string:rr_120", "value": "high" },
+            { "label": "@string:rr_90", "value": "middle" },
+            { "label": "@string:rr_60", "value": "low" }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "items": [
+      {
+        "title": "@string:rr_gaming",
+        "desc": "@string:rr_gaming_desc",
+        "visible": "always",
+        "field": {
+          "default": "high",
+          "path": "games-default",
+          "type": "select",
+          "options": [
+            { "label": "@string:rr_120", "value": "high" },
+            { "label": "@string:rr_90", "value": "middle" },
+            { "label": "@string:rr_60", "value": "low" }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "items": [
+      {
+        "title": "@string:rr_battery_low",
+        "desc": "@string:rr_battery_low_desc",
+        "visible": "always",
+        "field": {
+          "default": "low",
+          "path": "low-battery-mode",
+          "type": "select",
+          "options": [
+            { "label": "@string:rr_120", "value": "high" },
+            { "label": "@string:rr_90", "value": "middle" },
+            { "label": "@string:rr_60", "value": "low" }
+          ]
+        }
+      },
+      {
+        "title": "@string:rr_battery_threshold",
+        "desc": "@string:rr_battery_threshold_desc",
+        "visible": "always",
+        "field": {
+          "default": "10",
+          "path": "low-battery-threshold",
+          "type": "number",
+          "max": 30,
+          "min": 1
+        }
+      }
+    ]
+  },
+  {
+    "items": [
+      {
+        "title": "@string:rr_standby",
+        "desc": "@string:rr_standby_desc",
+        "visible": "always",
+        "field": {
+          "default": "high",
+          "path": "screen-off",
+          "type": "select",
+          "options": [
+            { "label": "@string:rr_120", "value": "high" },
+            { "label": "@string:rr_90", "value": "middle" },
+            { "label": "@string:rr_60", "value": "low" }
+          ]
+        }
+      },
+      {
+        "title": "@string:rr_gesture",
+        "desc": "@string:rr_gesture_desc",
+        "visible": "always",
+        "field": {
+          "default": "high",
+          "path": "gesture",
+          "type": "select",
+          "options": [
+            { "label": "@string:rr_120", "value": "high" },
+            { "label": "@string:rr_90", "value": "middle" },
+            { "label": "@string:rr_60", "value": "low" }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "items": [
+      {
+        "title": "@string:rr_brightness_threshold",
+        "desc": "@string:rr_brightness_threshold_desc",
+        "visible": "always",
+        "field": {
+          "default": "0",
+          "path": "brightness-threshold",
+          "type": "number",
+          "max": 100,
+          "min": 0
+        }
+      },
+      {
+        "title": "@string:rr_brightness_low",
+        "desc": "@string:rr_brightness_low_desc",
+        "visible": "always",
+        "field": {
+          "default": "high",
+          "path": "low-brightness",
+          "type": "select",
+          "options": [
+            { "label": "@string:rr_120", "value": "high" },
+            { "label": "@string:rr_90", "value": "middle" },
+            { "label": "@string:rr_60", "value": "low" }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "items": [
+      {
+        "title": "@string:rr_duration_tap",
+        "desc": "@string:rr_duration_tap_desc",
+        "visible": "always",
+        "field": {
+          "default": "900",
+          "path": "tap-delay",
+          "type": "number",
+          "max": 5000,
+          "min": 300
+        }
+      },
+      {
+        "title": "@string:rr_duration_scroll",
+        "desc": "@string:rr_duration_scroll_desc",
+        "visible": "always",
+        "field": {
+          "default": "2000",
+          "path": "scroll-delay",
+          "type": "number",
+          "max": 5000,
+          "min": 500
+        }
+      }
+    ]
+  },
+  {
+    "items": [
+      {
+        "title": "@string:rr_peak",
+        "desc": "@string:rr_peak_desc",
+        "visible": "always",
+        "field": {
+          "path": "use_peak",
+          "type": "boolean"
+        }
+      },
+      {
+        "title": "@string:rr_disable_ltpo",
+        "desc": "@string:rr_disable_ltpo_desc",
+        "visible": "never",
+        "field": {
+          "default": "0",
+          "path": "disable-ltpo",
+          "type": "boolean"
+        }
+      },
+      {
+        "title": "@string:rr_strict",
+        "desc": "@string:rr_strict_desc",
+        "visible": "always",
+        "field": {
+          "path": "strict",
+          "type": "boolean"
+        }
+      },
+      {
+        "title": "@string:rr_display_modes",
+        "desc": "@string:rr_display_modes_desc",
+        "visible": "always",
+        "field": {
+          "path": "display-modes",
+          "type": "text",
+          "default": "-1 -1 -1",
+          "hint": "High - Middle - Low"
+        }
+      }
+    ]
+  }
+]

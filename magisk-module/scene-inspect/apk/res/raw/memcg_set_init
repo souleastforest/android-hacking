@@ -1,0 +1,60 @@
+if [[ -e /sys/fs/cgroup/memory/memory.swappiness ]]; then
+  scene_memcg="/sys/fs/cgroup/memory"
+elif [[ -d /dev/memcg ]]; then
+  scene_memcg="/dev/memcg"
+fi
+
+init_group() {
+  local g=$scene_memcg/$1
+  if [[ ! -d $g ]]; then
+    mkdir -p $g
+  fi
+  echo $2 > $g/memory.swappiness
+  echo 1 > $g/memory.oom_control
+  echo 1 > $g/memory.use_hierarchy
+  echo 1 > $g/memory.anno_writeback_enable
+}
+
+if [[ "$scene_memcg" != "" ]]; then
+  swappiness=$(cat /proc/sys/vm/swappiness)
+  sys_swappiness=60
+  active_swappiness=60
+  idle_swappiness=100
+  if [[ $KVersion -ge 5 ]]; then
+    idle_swappiness=200
+    sys_swappiness=100
+  fi
+  if [[ $sys_swappiness -gt $swappiness ]]; then
+    sys_swappiness=$swappiness
+  fi
+  if [[ $active_swappiness -gt $swappiness ]]; then
+    active_swappiness=$swappiness
+  fi
+  if [[ $idle_swappiness -lt $swappiness ]]; then
+    idle_swappiness=$swappiness
+  fi
+
+  init_group apps $swappiness
+  init_group system $sys_swappiness
+  init_group scene_active $active_swappiness
+  init_group scene_idle $idle_swappiness
+
+  MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+  MemTotalKB=${MemTotalStr:16:8}
+  #echo $((MemTotalKB/1024/30))M
+
+  limitMB=$((MemTotalKB/1024/4))
+  if [[ $limitMB -lt 1024 ]]; then
+    limitMB=1024
+  fi
+  echo ${limitMB}M > $scene_memcg/apps/memory.soft_limit_in_bytes
+  echo $((MemTotalKB/1024/10))M > $scene_memcg/scene_idle/memory.soft_limit_in_bytes
+
+  # echo 8192M > $scene_memcg/scene_idle/memory.memsw.limit_in_bytes
+  # echo 512M > $scene_memcg/scene_idle/memory.limit_in_bytes
+  # echo 512M > $scene_memcg/scene_idle/memory.kmem.limit_in_bytes
+
+  find $scene_memcg -name memory.move_charge_at_immigrate | while read row; do
+    echo 1 > $row
+  done
+fi

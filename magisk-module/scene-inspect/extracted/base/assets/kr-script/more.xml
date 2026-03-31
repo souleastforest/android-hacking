@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pages>
+    <resource dir="file:///android_asset/kr-script/common" />
+
+    <group>
+        <page
+            id="page-xiaomi"
+            config="miui/miui.xml"
+            desc="适用于MIUI系统的选项" title="MIUI专属"
+            visible="run common/miui_support.sh" />
+        <page
+            id="page-oppo"
+            config="oppo/oppo.xml"
+            desc="适用于OPPO系的选项" title="OPPO专属"
+            visible="run common/oppo_support.sh" />
+        <page
+            id="page-flyme"
+            config="flyme/flyme.xml"
+            desc="适用于Meizu系的选项" title="Meizu专属"
+            visible="run common/flyme_support.sh" />
+        <page
+            id="page-google"
+            config="aosp/aosp.xml"
+            desc="越接近原生的系统越适用" title="AOSP专属" />
+    </group>
+
+    <group>
+        <page
+            id="page-mtk"
+            config-sh="file:///android_asset/kr-script/mtk/mtk.sh"
+            desc="MTK/天玑处理器用于调试性能的选项" title="MTK/天玑专属"
+            visible="run common/mtk_ppm.sh" />
+        <page
+            id="page-mtk-v2"
+            config-sh="file:///android_asset/kr-script/mtk/mtk_v2.sh"
+            desc="MTK/天玑处理器用于调试性能的选项" title="MTK/天玑专属"
+            visible="run common/mtk_v2.sh" />
+        <page
+            id="page-qualcomm"
+            config="qualcomm/qualcomm.xml"
+            desc="高通/骁龙处理器用于调试性能的选项" title="高通/骁龙专属"
+            visible="run common/qualcomm.sh" />
+    </group>
+
+    <group>
+        <page
+            id="page-display"
+            config="display/display.xml"
+            desc="与界面显示或屏幕相关的选项" title="UI/显示" />
+        <page
+            id="page-battery"
+            config="battery/battery.xml"
+            desc="耗电记录、低电量" title="电池、充电" />
+        <page
+            id="page-apps"
+            config="apps/apps.xml"
+            desc="第三方应用程序相关选项" title="应用程序" />
+    </group>
+
+    <group>
+        <page
+            id="page-developer"
+            config="developer/developer.xml"
+            desc="适用于开发者的功能" title="开发者工具" />
+        <page
+            id="page-other"
+            config="other/other.xml"
+            desc="其它杂七杂八的功能" title="杂项" />
+    </group>
+
+    <group exist="/data/blacklist.conf">
+        <action shell="hidden">
+            <title>冻结名单</title>
+            <desc>配置Magisk模块[应用冻结者]的自动冻结(应用)名单</desc>
+            <param name="apps" type="app" multiple="multiple" value-sh="cat /data/blacklist.conf | grep -E -v '^#'" />
+            <summary sh="echo 已添加 $(cat /data/blacklist.conf | grep -E -v '^#' | wc -l) 个应用" />
+            <set>
+                echo "# scene_freezer target apps\n$apps" > /data/blacklist.conf
+                killall scene-freezer 2>/dev/null
+                MODDIR=/data/adb/modules/scene_freezer
+                nohup $MODDIR/scene-freezer > /dev/null 2>&amp;1 &amp;
+            </set>
+        </action>
+    </group>
+</pages>

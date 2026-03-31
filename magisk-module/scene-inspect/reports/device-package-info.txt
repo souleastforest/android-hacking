@@ -1,0 +1,8 @@
+== pm path ==
+package:/data/app/~~0_iA3Do5DNcT_dlp8BdLDA==/com.omarea.vtools-jJTjHUPEcyfrc-3P2SsRBw==/base.apk
+
+== dumpsys package ==
+    versionCode=820241117 minSdk=23 targetSdk=30
+    versionName=8.0.15
+    lastUpdateTime=2025-01-07 18:56:42
+      firstInstallTime=2025-01-07 18:56:42

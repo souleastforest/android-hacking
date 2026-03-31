@@ -1,0 +1,40 @@
+[
+  {
+    "title": "@string:limiter_apps",
+    "items": [
+      {
+        "title": "@string:btn_enable",
+        "visible": "always",
+        "field": {
+          "default": "1",
+          "path": "in_apps",
+          "type": "boolean"
+        }
+      }
+    ]
+  },
+  {
+    "title": "@string:limiter_games",
+    "items": [
+      {
+        "title": "@string:btn_enable",
+        "visible": "always",
+        "field": {
+          "default": "1",
+          "path": "in_games",
+          "type": "boolean"
+        }
+      },
+      {
+        "title": "仅在超大核负载异常时生效",
+        "desc": "Enabled only when Gold Core load is abnormal",
+        "visible": "always",
+        "field": {
+          "default": "0",
+          "path": "in_games_abnormal",
+          "type": "boolean"
+        }
+      }
+    ]
+  }
+]
