@@ -1,0 +1,3 @@
+    codePath=/data/app/~~M1Gjkzc1vI_LiG_qVEAgKQ==/com.miui.themestore-4SEtHlbFRJIN9EDVtsjwig==
+    versionCode=30 minSdk=21 targetSdk=35
+    versionName=30.0

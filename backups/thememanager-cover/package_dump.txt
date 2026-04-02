@@ -1,0 +1,6 @@
+    codePath=/data/app/~~6m--e_5wOR9RECz21z55QA==/com.android.thememanager-hzJ67V9TVuuL0gfnKnuhuQ==
+    versionCode=4014 minSdk=26 targetSdk=31
+    versionName=4.0.1.4
+    codePath=/product/app/MIUIThemeManagerGlobal
+    versionCode=4014 minSdk=26 targetSdk=31
+    versionName=4.0.1.4
